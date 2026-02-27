@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morning Briefing – 26. Februar 2026</title>
+<title>Morning Briefing – 27. Februar 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -143,23 +143,24 @@
     font-size: 14px;
     color: #c9d1d9;
     line-height: 1.7;
+    margin-bottom: 10px;
   }
-  .hero-story .hero-stats {
-    display: flex;
-    gap: 16px;
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     margin-top: 14px;
-    flex-wrap: wrap;
   }
-  .hero-stat {
+  @media(max-width: 450px) { .hero-stats { grid-template-columns: repeat(2,1fr); } }
+  .hs-stat {
     background: rgba(240,180,41,0.08);
     border: 1px solid rgba(240,180,41,0.2);
     border-radius: 6px;
-    padding: 8px 12px;
+    padding: 10px;
     text-align: center;
   }
-  .hero-stat .hs-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; }
-  .hero-stat .hs-val { font-size: 15px; font-weight: 700; color: #f0b429; }
-  .hero-stat .hs-sub { font-size: 11px; color: #8b949e; margin-top: 1px; }
+  .hs-stat .hss-label { font-size: 10px; color: #8b949e; letter-spacing: 0.5px; margin-bottom: 3px; }
+  .hs-stat .hss-value { font-size: 15px; font-weight: 700; color: #f0b429; }
 
   /* NEWS ITEMS */
   .news-list { margin-bottom: 28px; }
@@ -208,8 +209,8 @@
 
   /* AKTIE DES TAGES */
   .stock-box {
-    background: linear-gradient(135deg, #1a2a1a, #161b22);
-    border: 1px solid #2ea043;
+    background: linear-gradient(135deg, #1a1a2e, #161b22);
+    border: 1px solid #58a6ff44;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 28px;
@@ -219,7 +220,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #3fb950;
+    color: #58a6ff;
     margin-bottom: 8px;
   }
   .stock-box h2 {
@@ -235,63 +236,8 @@
     flex-wrap: wrap;
   }
   .sm-item { text-align: left; }
-  .sm-item .sm-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 1px; }
-  .sm-item .sm-val { font-size: 16px; font-weight: 700; color: #e6edf3; }
-  .sm-item .sm-val.up { color: #3fb950; }
-  .sm-item .sm-val.down { color: #f85149; }
-  .stock-box p {
-    font-size: 13px;
-    color: #c9d1d9;
-    line-height: 1.7;
-  }
-
-  /* ZAHLEN-TAG BOX */
-  .earnings-box {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-  }
-  .earnings-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 10px 0;
-    border-bottom: 1px solid #21262d;
-  }
-  .earnings-row:last-child { border-bottom: none; padding-bottom: 0; }
-  .earnings-row:first-child { padding-top: 0; }
-  .er-company { flex: 1; }
-  .er-company strong { font-size: 14px; color: #e6edf3; display: block; margin-bottom: 2px; }
-  .er-company span { font-size: 12px; color: #8b949e; }
-  .er-result { text-align: right; flex-shrink: 0; }
-  .er-result .er-val { font-size: 14px; font-weight: 700; }
-  .er-result .er-label { font-size: 10px; color: #8b949e; }
-
-  /* QUOTE */
-  .quote-box {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-    text-align: center;
-  }
-  .quote-box blockquote {
-    font-size: 16px;
-    font-style: italic;
-    color: #c9d1d9;
-    line-height: 1.6;
-    margin-bottom: 8px;
-  }
-  .quote-box .attribution {
-    font-size: 12px;
-    color: #8b949e;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
+  .sm-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+  .sm-val { font-size: 14px; font-weight: 700; color: #e6edf3; }
 
   /* OUTLOOK */
   .outlook-box {
@@ -302,7 +248,7 @@
     margin-bottom: 28px;
   }
   .outlook-box h3 {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
     color: #e6edf3;
     margin-bottom: 12px;
@@ -322,6 +268,27 @@
     border-radius: 50%;
     background: #f0b429;
     margin-top: 6px;
+  }
+
+  /* QUOTE */
+  .quote-box {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-left: 3px solid #8b949e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+  }
+  .quote-box blockquote {
+    font-size: 15px;
+    font-style: italic;
+    color: #c9d1d9;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+  .quote-box .attribution {
+    font-size: 12px;
+    color: #8b949e;
   }
 
   /* FOOTER */
@@ -347,19 +314,19 @@
 <div class="header">
   <div class="header-logo">📈 aktien.kauf Podcast</div>
   <h1>Morning Briefing</h1>
-  <div class="date">DONNERSTAG, 26. FEBRUAR 2026</div>
+  <div class="date">FREITAG, 27. FEBRUAR 2026</div>
   <div class="tagline">Dein täglicher Marktüberblick – prägnant. fundiert. direkt.</div>
 </div>
 
 <!-- TICKER BAR -->
 <div class="ticker-bar">
-  <div class="tick-item"><span class="tick-label">DAX</span> <span class="tick-value">25.214</span> <span class="tick-up">▲ +1,4%</span></div>
-  <div class="tick-item"><span class="tick-label">S&P 500</span> <span class="tick-value">6.946</span> <span class="tick-up">▲ +0,8%</span></div>
-  <div class="tick-item"><span class="tick-label">Nasdaq</span> <span class="tick-value">23.152</span> <span class="tick-up">▲ +1,3%</span></div>
-  <div class="tick-item"><span class="tick-label">BTC</span> <span class="tick-value">~$68.500</span> <span class="tick-up">▲ +5,7%</span></div>
-  <div class="tick-item"><span class="tick-label">Gold</span> <span class="tick-value">$5.064</span> <span class="tick-down">▼ −0,4%</span></div>
-  <div class="tick-item"><span class="tick-label">Öl (Brent)</span> <span class="tick-value">$69,16</span> <span class="tick-down">▼ −0,7%</span></div>
-  <div class="tick-item"><span class="tick-label">EUR/USD</span> <span class="tick-value">1,1881</span> <span class="tick-neutral">→</span></div>
+  <div class="tick-item"><span class="tick-label">DAX</span> <span class="tick-value">25.289</span> <span class="tick-up">▲ +0,5%</span></div>
+  <div class="tick-item"><span class="tick-label">S&P 500</span> <span class="tick-value">6.886</span> <span class="tick-neutral">≈ flat</span></div>
+  <div class="tick-item"><span class="tick-label">Nasdaq</span> <span class="tick-value">22.878</span> <span class="tick-down">▼ −1,2%</span></div>
+  <div class="tick-item"><span class="tick-label">BTC</span> <span class="tick-value">$57.400</span> <span class="tick-up">▲ +0,4%</span></div>
+  <div class="tick-item"><span class="tick-label">Gold</span> <span class="tick-value">$5.185</span> <span class="tick-up">▲ +0,1%</span></div>
+  <div class="tick-item"><span class="tick-label">Öl (Brent)</span> <span class="tick-value">$70,83</span> <span class="tick-down">▼ −0,1%</span></div>
+  <div class="tick-item"><span class="tick-label">EUR/USD</span> <span class="tick-value">1,1810</span> <span class="tick-up">▲ +0,1%</span></div>
 </div>
 
 <div class="container">
@@ -369,54 +336,49 @@
   <div class="market-grid">
     <div class="market-card">
       <div class="m-label">DAX</div>
-      <div class="m-value">25.214</div>
-      <div class="m-change up">+1,4%</div>
+      <div class="m-value">25.289</div>
+      <div class="m-change up">+0,5%</div>
     </div>
     <div class="market-card">
       <div class="m-label">S&P 500</div>
-      <div class="m-value">6.946</div>
-      <div class="m-change up">+0,8%</div>
+      <div class="m-value">6.886</div>
+      <div class="m-change up">≈ flat</div>
     </div>
     <div class="market-card">
       <div class="m-label">Bitcoin</div>
-      <div class="m-value">~$68.500</div>
-      <div class="m-change up">+5,7%</div>
+      <div class="m-value">$57.400</div>
+      <div class="m-change up">+0,4%</div>
     </div>
     <div class="market-card">
       <div class="m-label">Gold</div>
-      <div class="m-value">$5.064</div>
-      <div class="m-change down">−0,4%</div>
+      <div class="m-value">$5.185</div>
+      <div class="m-change up">+0,1%</div>
     </div>
   </div>
 
   <!-- HERO STORY -->
   <div class="section-label">🔥 Das Thema des Tages</div>
   <div class="hero-story">
-    <div class="hs-badge">🟢 Nvidia – Die Mutter aller Earnings-Reports</div>
-    <h2>Nvidia schlägt alle Erwartungen – Rekordumsatz $68 Mrd., Q1-Ausblick $78 Mrd.</h2>
+    <div class="hs-badge">🎬 Hollywood-Deal – Netflix zieht sich zurück</div>
+    <h2>Netflix gibt Bieterkampf um Warner Bros. Discovery auf – Paramount übernimmt, CNN wechselt den Besitzer</h2>
     <p>
-      Nvidia hat gestern Abend nach US-Börsenschluss die Zahlen für Q4 FY2026 veröffentlicht – und lieferte einmal mehr einen überzeugenden Schlag. Umsatz: <strong>$68,1 Mrd.</strong> (+73 % zum Vorjahr, +20 % zum Vorquartal) – weit über der eigenen Guidance von $65 Mrd. Das Data-Center-Geschäft explodierte auf <strong>$62,3 Mrd.</strong> (+75 % YoY), angetrieben durch den Boom der Blackwell-Architektur. CEO Jensen Huang: <em>„Der Agentic-AI-Inflektionspunkt ist angekommen."</em> Besonders stark: Der Ausblick auf Q1 FY2027 mit <strong>$78 Mrd.</strong> – deutlich über den Erwartungen von $72,8 Mrd. Die erste Aktienreaktion: +3 % nachbörslich, dann abgedämpft. Der Markt will mehr als Rekordzahlen – er will Gewissheit über 2027 und 2028.
+      Der größte M&A-Deal der Medienbranche seit Jahren entscheidet sich: Netflix hat erklärt, kein höheres Angebot für Warner Bros. Discovery vorzulegen. Paramount Skydance – geführt von David Ellison, Sohn von Oracle-Gründer Larry Ellison – hatte sein Gebot zuletzt auf 111 Mrd. USD für den gesamten Konzern erhöht (zuvor: 30 → 31 USD je Aktie). Netflix hatte nur rund 83 Mrd. USD für das Studio- und Streaming-Geschäft geboten, ohne die TV-Sparten. Der Warner-Verwaltungsrat stufte das Paramount-Angebot als überlegen ein. Netflix hatte vier Tage Zeit für ein Gegenangebot – und ließ sie verstreichen. Ein weiteres Überbieten, so Netflix, wäre finanziell nicht mehr attraktiv gewesen.
+    </p>
+    <p>
+      Die Börse feiert: Netflix-Aktie steigt nachbörslich +8,5 % auf 91,79 USD. Analysten applaudieren der Kostendisziplin. Jefferies bestätigt „Buy" mit Kursziel 134 USD und sieht weiterhin 10 % Umsatzwachstum p.a. bis 2030. Netflix kündigt zudem ein Aktienrückkaufprogramm an. Paramount gewinnt +4,7 %, Warner verliert −1,7 %. Politisch brisant: CNN landet damit unter dem Dach der Trump-nahen Ellison-Familie – kritische Beobachter befürchten einen Verlust redaktioneller Unabhängigkeit.
     </p>
     <div class="hero-stats">
-      <div class="hero-stat">
-        <div class="hs-label">Q4-Umsatz</div>
-        <div class="hs-val">$68,1 Mrd.</div>
-        <div class="hs-sub">Guidance: $65 Mrd.</div>
+      <div class="hs-stat">
+        <div class="hss-label">Netflix nachbörslich</div>
+        <div class="hss-value">+8,5 %</div>
       </div>
-      <div class="hero-stat">
-        <div class="hs-label">EPS (adj.)</div>
-        <div class="hs-val">$1,62</div>
-        <div class="hs-sub">Erwartet: $1,53</div>
+      <div class="hs-stat">
+        <div class="hss-label">Paramount-Gebot</div>
+        <div class="hss-value">111 Mrd. $</div>
       </div>
-      <div class="hero-stat">
-        <div class="hs-label">Q1-Outlook</div>
-        <div class="hs-val">$78 Mrd.</div>
-        <div class="hs-sub">±2%, ex-China</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hs-label">Free Cash Flow FY26</div>
-        <div class="hs-val">$97 Mrd.</div>
-        <div class="hs-sub">$41 Mrd. zurück an Aktionäre</div>
+      <div class="hs-stat">
+        <div class="hss-label">Vertragsstrafe an Netflix</div>
+        <div class="hss-value">2,8 Mrd. $</div>
       </div>
     </div>
   </div>
@@ -426,115 +388,111 @@
   <div class="news-list">
 
     <div class="news-item">
-      <div class="news-icon">🏦</div>
+      <div class="news-icon">🛡️</div>
       <div class="news-content">
-        <span class="news-tag tag-yellow">Allianz</span>
-        <h3>Allianz: Operatives Rekordergebnis – 17,4 Mrd. EUR im Geschäftsjahr 2025</h3>
-        <p>Die Allianz veröffentlicht heute Morgen ihre Jahreszahlen für 2025 und meldet ein neues Rekordergebnis von <strong>17,4 Mrd. EUR</strong> operativem Gewinn. Dazu kommt ein neues Aktienrückkaufprogramm über <strong>2,5 Mrd. EUR</strong>. CEO Oliver Bäte spricht von einem „exzellenten Start in den neuen Strategiezyklus". Die Aktie gehört damit zu den Tagesgewinnern im DAX.</p>
-      </div>
-    </div>
-
-
-
-    <div class="news-item">
-      <div class="news-icon">📡</div>
-      <div class="news-content">
-        <span class="news-tag tag-blue">Deutsche Telekom</span>
-        <h3>Deutsche Telekom: Prognose übertroffen – Umsatz +2,9% auf 119 Mrd. EUR, Ausblick 2026 optimistisch</h3>
-        <p>Die Deutsche Telekom hat heute Morgen (07:00 Uhr) ihre Jahreszahlen für 2025 veröffentlicht und übertrifft die eigene Prognose. Umsatz: <strong>119,1 Mrd. EUR (+2,9%)</strong>, bereinigtes EBITDA AL: <strong>44,2 Mrd. EUR (+2,8%)</strong>, bereinigter Konzernüberschuss: <strong>9,7 Mrd. EUR (+3,7%)</strong>. CEO Tim Höttges: „Wir liefern weiterhin verlässliches und nachhaltiges Wachstum." Wachstumstreiber war erneut T-Mobile US (+4,1%). Ausblick 2026: EBITDA AL rund 47,4 Mrd. EUR (+7%), Free Cashflow rund 19,8 Mrd. EUR. Dividende: <strong>1,00 EUR</strong> je Aktie (von 0,90 EUR). Dazu Aktienrückkauf bis zu 2 Mrd. EUR in 2026.</p>
+        <span class="news-tag tag-green">Rüstung</span>
+        <h3>HENSOLDT: Auftragsrekord von 4,7 Mrd. EUR – Aktie dennoch unter Druck</h3>
+        <p>Radar-Spezialist HENSOLDT verzeichnete 2025 Aufträge im Wert von 4,7 Mrd. EUR (+62 % YoY) – getrieben vom europäischen Rüstungsboom. Umsatz: 2,46 Mrd. EUR (+10 %). EBITDA: 452 Mio. EUR (+12 %). Für 2026 erwartet CEO Dörre 2,75 Mrd. EUR Umsatz. Die Aktie verliert dennoch bis zu 6 %, weil Analysten mehr erhofft hatten – Dividende (0,55 EUR) und EBITDA-Marge (18,4 %) verfehlen leicht die Konsenserwartungen. Jefferies kritisiert: Ausblick liegt 2 % unter Markterwartungen.</p>
       </div>
     </div>
 
     <div class="news-item">
-      <div class="news-icon">🏛️</div>
+      <div class="news-icon">⚗️</div>
       <div class="news-content">
-        <span class="news-tag tag-yellow">Munich Re</span>
-        <h3>Munich Re: Rekordgewinn 6,1 Mrd. EUR – Eigene Ziele trotz Q4-Delle übertroffen</h3>
-        <p>Munich Re meldet heute (07:30 Uhr) ein Rekordergebnis für 2025: <strong>Gewinn 6,1 Mrd. EUR</strong> (von 5,7 Mrd. EUR im Vorjahr) – eigenes Ziel übertroffen. Im Q4 sank das Ergebnis um 12% auf 945 Mio. EUR. Dividende für 2025: <strong>24 EUR je Aktie</strong> (von 20 EUR, +20%). Dazu neuer Aktienrückkauf bis zu <strong>2,25 Mrd. EUR</strong>. Ausblick 2026: Gewinnziel rund 6,3 Mrd. EUR, Versicherungsumsatz 64 Mrd. EUR. Einziger Wermutstropfen: In der Januar-Erneuerungsrunde sank das Preisniveau risikoadjustiert um 2,5% – der Konzern verzichtete bewusst auf unattraktives Volumen (-7,8% auf 13,7 Mrd. EUR). Strategie: breite Aufstellung bis 2030 zur Reduktion der Abhängigkeit vom volatilen Schaden-Rückversicherungsgeschäft.</p>
+        <span class="news-tag tag-yellow">Chemie</span>
+        <h3>BASF: Jahresbericht 2025 – verfehltes EBITDA-Ziel, vorsichtiger Ausblick, stabile Dividende</h3>
+        <p>BASF präsentierte heute seinen vollständigen Geschäftsbericht 2025. Das EBITDA vor Sondereinflüssen sank um 9,5 % auf 6,6 Mrd. EUR – die eigene Prognose (6,7–7,1 Mrd.) wurde unterschritten. Positiv: Free Cashflow 1,3 Mrd. EUR (deutlich über Prognose), Nettogewinn stieg von 1,3 auf 1,6 Mrd. EUR. Für 2026 erwartet BASF ein EBITDA von 6,2–7,0 Mrd. EUR. Dividende bleibt stabil bei 2,25 EUR (~4,5 % Rendite). Sparprogramm verschärft auf 2,3 Mrd. EUR jährlich. Aktienrückkauf läuft bis 2028 (4 Mrd. EUR Gesamtvolumen).</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-icon">📦</div>
+      <div class="news-content">
+        <span class="news-tag tag-red">Bilanzskandal</span>
+        <h3>Gerresheimer: BaFin weitet Prüfung massiv aus – Aktie auf Jahrzehnt-Tief</h3>
+        <p>Das Trauerspiel eskaliert: Die BaFin weitet ihre Bilanzprüfung auf weitere Zeiträume aus – nun auch auf den Halbjahresbericht 2024/25. Neue Vorwürfe: fehlerhafte Leasingverbindlichkeiten (65,5 Mio. EUR), falsche Nutzungsdauern von Entwicklungskosten (29,4 Mio. EUR) und zu späte Wertminderungen im Segment Advanced Technologies (196,5 Mio. EUR). Die Aktie fiel auf unter 15 EUR – ein Niveau zuletzt 2009. Seit Jahresbeginn: −40 %. Die Aktionärsvereinigung DSW prüft Schadenersatzklagen.</p>
       </div>
     </div>
 
     <div class="news-item">
       <div class="news-icon">🤖</div>
       <div class="news-content">
-        <span class="news-tag tag-purple">KI / Software</span>
-        <h3>Salesforce überzeugt – Software-Sektor findet langsam Boden</h3>
-        <p>Salesforce berichtete gestern Abend zeitgleich mit Nvidia – und lieferte ebenfalls solide Zahlen (+3,4 % gestern). Zusammen mit Nvidias starken Zahlen könnte sich der Software-Sektor, der 2026 bisher massiv unter KI-Disruptions-Angst gelitten hat, stabilisieren. Fundstrat's Tom Lee sieht erste Anzeichen eines Bodens: rekordhohe Handelsvolumen in Software-ETFs in den letzten zwei Tagen.</p>
+        <span class="news-tag tag-purple">KI / Tech</span>
+        <h3>Nvidia-Nachbeben: Nasdaq schwächelt – Markt verdaut Rekordzahlen</h3>
+        <p>Nvidia lieferte Mittwochabend Rekordumsätze (68,1 Mrd. USD) und starken Ausblick (78 Mrd. USD Q1). Trotzdem fiel die Aktie gestern −1 % – klassische "sell the news"-Reaktion. Der Nasdaq 100 verlor −1,2 %, Broadcom −5 % bis −7 %. Salesforce verlor trotz guter Zahlen, weil der Umsatzausblick 2026/27 von 46 Mrd. USD nur im Rahmen der Erwartungen lag. Der Markt straft alles, was nicht dramatisch übertrifft. KI-Infrastruktur bleibt intakt – aber die Bewertungsluft wird dünner.</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-icon">🛵</div>
+      <div class="news-content">
+        <span class="news-tag tag-red">Lieferdienste</span>
+        <h3>Delivery Hero: Profitabilitätsziel 2025 erreicht – Aktie trotzdem −3,6 %</h3>
+        <p>Der Berliner Lieferkonzern erreichte sein bereinigtes EBITDA-Ziel für 2025 von 900–940 Mio. EUR (Vorjahr: 693 Mio. EUR) – ein Meilenstein auf dem langen Weg zur Profitabilität. Jahresumsatz: 14,8 Mrd. EUR (+16 %), GMV: 49,2 Mrd. EUR. Das Schlussquartal enttäuschte jedoch: GMV von 12,4 Mrd. EUR lag unter Analystenerwartungen von 12,7 Mrd. EUR, Umsatz 3,88 Mrd. EUR (Konsens: 3,97 Mrd.). CEO Östberg betont Resilienz trotz starkem Wettbewerbsdruck in Saudi-Arabien und Asien. Bernstein Research bestätigt „Outperform". Aktie verliert −3,6 % auf 20,03 EUR.</p>
       </div>
     </div>
 
   </div>
 
-  <!-- AKTIE IM FOKUS: ALLIANZ -->
+  <!-- AKTIE IM FOKUS -->
   <div class="section-label">⭐ Aktie im Fokus</div>
   <div class="stock-box">
-    <div class="sb-label">📌 Zahlen-Tag – Allianz SE</div>
-    <h2>Allianz SE – Rekordergebnis und Rückkaufprogramm: Was bedeutet das für die Aktie?</h2>
+    <div class="sb-label">🎬 Deal geplatzt – Aktie hebt ab</div>
+    <h2>Netflix – Kostendisziplin siegt über Hollywood-Ehrgeiz</h2>
     <div class="stock-meta">
       <div class="sm-item">
-        <div class="sm-label">Op. Gewinn FY25</div>
-        <div class="sm-val up">17,4 Mrd. EUR</div>
+        <div class="sm-label">Kurs nachbörslich</div>
+        <div class="sm-val up">~91,79 USD</div>
       </div>
       <div class="sm-item">
-        <div class="sm-label">Rückkauf</div>
-        <div class="sm-val up">2,5 Mrd. EUR</div>
+        <div class="sm-label">Nachbörslich</div>
+        <div class="sm-val up">+8,5 %</div>
       </div>
       <div class="sm-item">
-        <div class="sm-label">Dividende</div>
-        <div class="sm-val">erhöht</div>
+        <div class="sm-label">Jefferies-Ziel</div>
+        <div class="sm-val">134 USD</div>
       </div>
       <div class="sm-item">
-        <div class="sm-label">Sektor-Trend</div>
-        <div class="sm-val up">stark</div>
+        <div class="sm-label">Rating Jefferies</div>
+        <div class="sm-val up">Buy</div>
       </div>
     </div>
-    <p>
-      Allianz liefert heute eine echte Überraschung: Ein operatives Rekordergebnis von 17,4 Mrd. EUR plus Aktienrückkauf von 2,5 Mrd. EUR ist ein starkes Aktionärssignal. Die Versicherungsbranche profitiert 2026 von hohen Zinserträgen im Kapitalanlagebestand und soliden Underwriting-Margen. Fitch hatte im Jahresausblick noch leicht rückläufige Margen prognostiziert – Allianz widerlegt das eindrucksvoll. Die Aktie ist kein Wachstumswert, aber ein klassisches Cashflow-Monster mit attraktiver Ausschüttungspolitik. Als Value-Investor in einem volatilen Jahr ist das exakt, was man sucht.
+    <p style="font-size:13px; color:#c9d1d9; line-height:1.7;">
+      Der Rückzug aus dem Warner-Deal ist aus Investorensicht eine kluge Entscheidung: Netflix vermeidet eine Milliarden-Übernahme mit unklaren Synergien und bleibt fokussiert auf seine Kernkompetenz – Streaming. Stattdessen kündigt das Unternehmen ein Aktienrückkaufprogramm an. Jefferies sieht weiterhin 10 % Umsatzwachstum p.a. bis 2030 und durchschnittlich 20 % Ergebnisplus – ganz ohne Hollywood-Akquisition. Netflix-Aktie war in den vergangenen Monaten wegen der teuren Übernahmepläne unter Druck geraten – der Rückzieher wirkt wie eine Befreiung.
     </p>
   </div>
 
-  <!-- BITCOIN RADAR -->
-  <div class="section-label">₿ Bitcoin Radar</div>
-  <div class="news-item" style="margin-bottom: 28px;">
-    <div class="news-icon">📈</div>
-    <div class="news-content">
-      <span class="news-tag tag-yellow">Bitcoin</span>
-      <h3>Bitcoin springt +6% über $68.000 – Nvidia-Euphorie trifft Risk-On</h3>
-      <p>Bitcoin erholte sich heute kräftig und übersprang die $68.000-Marke – ein Plus von rund 6 % gegenüber dem Vortag. Auslöser ist eine breite Risk-On-Stimmung nach den starken Nvidia-Zahlen. Technisch wichtig: Die $65.300-Unterstützung (50-Monats-EMA) hat gehalten. Marktanalyst Michaël van de Poppe: Historisch gesehen war Bitcoin nur an weniger als 5 % aller Handelstage günstiger bewertet als auf dem aktuellen Niveau. Nächste Widerstände: $70.000 und $78.000. Die Frage bleibt: Reicht das für eine nachhaltige Erholung, oder ist es nur ein technischer Bounce?</p>
-    </div>
-  </div>
-
-  <!-- AUSBLICK AUF DEN TAG -->
-  <div class="section-label">🎯 Ausblick: Was heute wichtig wird</div>
+  <!-- AUSBLICK -->
+  <div class="section-label">🎯 Ausblick: Was heute noch wichtig wird</div>
   <div class="outlook-box">
-    <h3>Das beobachten wir heute</h3>
+    <h3>Das beobachten wir</h3>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Allianz, Telekom, Munich Re:</strong> Alle drei Zahlen kommen heute Morgen. Der Markt wird genau schauen, ob die hohen Erwartungen erfüllt werden. Allianz hat mit dem Rekordergebnis den Ton gesetzt – kann Telekom und Munich Re nachziehen?</div>
+      <div><strong>Netflix &amp; Paramount: Wettbewerbsprüfung läuft an:</strong> Kaliforniens Generalstaatsanwalt Rob Bonta hat bereits Wettbewerbsbedenken angemeldet. Auch Washington wird den 111-Mrd.-USD-Deal prüfen. Die Ellisons setzen auf Trumps positives Umfeld – wie das ausgeht, wird Wochen oder Monate dauern.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Nvidia Nachbörse-Verdauung:</strong> Die erste Reaktion war +3 % nachbörslich, dann Abkühlung. Die große Frage für heute: Wie eröffnet NVDA an der Wall Street? Der Q1-Ausblick auf $78 Mrd. ist stark – aber Investoren wollen 2027-Visibility. GTC-Konferenz steht bevor.</div>
+      <div><strong>Delivery Hero Vollständige Jahreszahlen:</strong> Nach dem Trading Update werden heute Analysten die finalen Zahlen bewerten. Bernstein Research hält „Outperform" – entscheidend ist, wie das Unternehmen den Ausblick 2026 konkretisiert, insbesondere für die Talabat-Sparte und das Asiengeschäft.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>US-BIP Q4 (zweite Schätzung):</strong> Wichtige Makro-Daten heute aus den USA. Erste Schätzung: +2,3 %. Plus: PCE-Kerninflationsdaten – der bevorzugte Inflationsindikator der Fed. Bei Überraschungen könnte die Zinspolitik neu bewertet werden.</div>
+      <div><strong>Gerresheimer-Krise:</strong> Wann kommt eine Reaktion des Vorstands? CEO-Statement oder Kapitalmaßnahmen wären mögliche nächste Schritte. Die DSW-Ankündigung, Schadenersatz zu prüfen, erhöht den Druck erheblich.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Bitcoin $70.000 als nächster Test:</strong> Nach dem Sprung auf $68.500 ist $70.000 der nächste psychologisch wichtige Widerstand. Hält die Risk-On-Stimmung an, ist ein Test dieser Marke heute möglich. Institutionelle ETF-Flows werden genau beobachtet.</div>
+      <div><strong>HENSOLDT-Kurs stabilisiert sich?</strong> Nach dem Rückgang gestern (-6 %) wird heute der Handel zeigen, ob Investoren die starken Auftragsbestände (4,7 Mrd. EUR Backlog) als Chance sehen. Barclays hält "Equal Weight" mit Kursziel 97 EUR.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>DAX über 25.200:</strong> Der DAX notiert heute über 25.200 – ein starkes Zeichen. Nächste Hürde: 25.500. Rückenwind durch den Zahlen-Donnerstag der DAX-Schwergewichte und Nvidia-Euphorie. Geopolitisch: Bundestag erste Lesung Infrastruktur-Beschleunigungsgesetz – gut für Bausektor und Industrie.</div>
+      <div><strong>DAX: Wochenschluss bei 25.000+?</strong> Der DAX hält sich trotz Nasdaq-Schwäche über 25.000. Rüstungs- und Industriewerte stützen. Entscheidend: Hält der Index heute über 25.100, wäre das eine konstruktive Wochenbilanz.</div>
     </div>
   </div>
 
   <!-- ZITAT -->
   <div class="section-label">💬 Zitat des Tages</div>
   <div class="quote-box">
-    <blockquote>„Computing demand is growing exponentially. Enterprise adoption of agents is skyrocketing. Our customers are racing to invest in AI compute."</blockquote>
-    <div class="attribution">— Jensen Huang, CEO Nvidia, Q4 FY2026 Earnings Call</div>
+    <blockquote>"Die geopolitische Lage zwingt Europa zu einer nachhaltigen Stärkung seiner Verteidigungsfähigkeit. Das sehen wir nicht nur in steigenden Budgets, sondern seit dem letzten Halbjahr auch in beschleunigten und konkreten Beschaffungsentscheidungen."</blockquote>
+    <div class="attribution">— Oliver Dörre, CEO HENSOLDT, Jahresergebnisse 26. Februar 2026</div>
   </div>
 
 </div>
@@ -544,7 +502,7 @@
   <strong>aktien.kauf</strong> · Podcast · Morning Briefing<br>
   <a href="https://aktienkauf.github.io/briefing/">aktienkauf.github.io/briefing</a>
   <div class="disclaimer">
-    Dieses Briefing dient ausschließlich zur Information und stellt keine Anlageberatung dar. Alle Kursangaben sind indikativ und können abweichen. Investieren birgt Risiken. Bitte triff eigene Entscheidungen auf Basis eigener Recherche.
+    Dieses Briefing dient ausschließlich zur Information und stellt keine Anlageberatung dar. Alle Kursangaben sind indikativ und können abweichen. Investieren birgt Risiken. Bitte trifft eigene Entscheidungen auf Basis eigener Recherche.
   </div>
 </div>
 
