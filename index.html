@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morning Briefing – 27. Februar 2026</title>
+<title>Morning Briefing – Wochenend-Edition 1./2. März 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -39,10 +39,23 @@
     color: #8b949e;
     letter-spacing: 1px;
   }
+  .header .edition-badge {
+    display: inline-block;
+    margin-top: 10px;
+    background: rgba(248,81,73,0.15);
+    color: #f85149;
+    border: 1px solid rgba(248,81,73,0.3);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+  }
   .header .tagline {
     font-size: 13px;
     color: #8b949e;
-    margin-top: 6px;
+    margin-top: 10px;
   }
 
   /* TICKER BAR */
@@ -114,6 +127,27 @@
   .market-card .m-change { font-size: 12px; font-weight: 600; margin-top: 2px; }
   .up { color: #3fb950; }
   .down { color: #f85149; }
+
+  /* ALERT BOX – war */
+  .alert-box {
+    background: linear-gradient(135deg, #1f0a0a, #1a1016);
+    border: 1px solid rgba(248,81,73,0.4);
+    border-left: 4px solid #f85149;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #c9d1d9;
+    line-height: 1.6;
+  }
+  .alert-box .alert-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #f85149;
+    margin-bottom: 6px;
+  }
 
   /* HERO STORY */
   .hero-story {
@@ -206,6 +240,48 @@
   .tag-yellow { background: rgba(240,180,41,0.15); color: #f0b429; }
   .tag-blue { background: rgba(88,166,255,0.15); color: #58a6ff; }
   .tag-purple { background: rgba(188,140,255,0.15); color: #bc8cff; }
+  .tag-orange { background: rgba(255,159,28,0.15); color: #ff9f1c; }
+
+  /* INSIDER TRADE BOX */
+  .insider-box {
+    background: linear-gradient(135deg, #0f1d12, #161b22);
+    border: 1px solid rgba(63,185,80,0.3);
+    border-left: 4px solid #3fb950;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 28px;
+  }
+  .insider-box .ib-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #3fb950;
+    margin-bottom: 8px;
+  }
+  .insider-box h2 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .insider-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 12px 0;
+  }
+  @media(max-width: 450px) { .insider-grid { grid-template-columns: repeat(2,1fr); } }
+  .ig-stat {
+    background: rgba(63,185,80,0.07);
+    border: 1px solid rgba(63,185,80,0.2);
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+  }
+  .ig-stat .ig-label { font-size: 10px; color: #8b949e; margin-bottom: 3px; }
+  .ig-stat .ig-value { font-size: 14px; font-weight: 700; color: #3fb950; }
 
   /* AKTIE DES TAGES */
   .stock-box {
@@ -238,6 +314,56 @@
   .sm-item { text-align: left; }
   .sm-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
   .sm-val { font-size: 14px; font-weight: 700; color: #e6edf3; }
+
+  /* PODCAST PROMO */
+  .podcast-box {
+    background: linear-gradient(135deg, #1a1025, #161b22);
+    border: 1px solid rgba(188,140,255,0.35);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 28px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .podcast-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+  }
+  .podcast-content .pc-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #bc8cff;
+    margin-bottom: 6px;
+  }
+  .podcast-content h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .podcast-content p {
+    font-size: 13px;
+    color: #8b949e;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .podcast-cta {
+    display: inline-block;
+    background: rgba(188,140,255,0.15);
+    border: 1px solid rgba(188,140,255,0.4);
+    color: #bc8cff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+  .podcast-cta:hover { background: rgba(188,140,255,0.25); }
 
   /* OUTLOOK */
   .outlook-box {
@@ -314,19 +440,18 @@
 <div class="header">
   <div class="header-logo">📈 aktien.kauf Podcast</div>
   <h1>Morning Briefing</h1>
-  <div class="date">FREITAG, 27. FEBRUAR 2026</div>
-  <div class="tagline">Dein täglicher Marktüberblick – prägnant. fundiert. direkt.</div>
+  <div class="date">MONTAG, 2. MÄRZ 2026</div>
+  <div class="edition-badge">🔥 Wochenend-Special: 28. Feb – 2. März</div>
+  <div class="tagline">Das Wichtigste aus einem Wochenende, das die Welt verändert hat.</div>
 </div>
 
-<!-- TICKER BAR -->
+<!-- TICKER BAR – Marktdaten Montagmorgen / Wochenende -->
 <div class="ticker-bar">
-  <div class="tick-item"><span class="tick-label">DAX</span> <span class="tick-value">25.289</span> <span class="tick-up">▲ +0,5%</span></div>
-  <div class="tick-item"><span class="tick-label">S&P 500</span> <span class="tick-value">6.886</span> <span class="tick-neutral">≈ flat</span></div>
-  <div class="tick-item"><span class="tick-label">Nasdaq</span> <span class="tick-value">22.878</span> <span class="tick-down">▼ −1,2%</span></div>
-  <div class="tick-item"><span class="tick-label">BTC</span> <span class="tick-value">$57.400</span> <span class="tick-up">▲ +0,4%</span></div>
-  <div class="tick-item"><span class="tick-label">Gold</span> <span class="tick-value">$5.185</span> <span class="tick-up">▲ +0,1%</span></div>
-  <div class="tick-item"><span class="tick-label">Öl (Brent)</span> <span class="tick-value">$70,83</span> <span class="tick-down">▼ −0,1%</span></div>
-  <div class="tick-item"><span class="tick-label">EUR/USD</span> <span class="tick-value">1,1810</span> <span class="tick-up">▲ +0,1%</span></div>
+  <div class="tick-item"><span class="tick-label">DAX</span> <span class="tick-value">~24.800</span> <span class="tick-down">▼ erwartet</span></div>
+  <div class="tick-item"><span class="tick-label">Öl (Brent)</span> <span class="tick-value">$82,37</span> <span class="tick-up">▲ +10%</span></div>
+  <div class="tick-item"><span class="tick-label">Gold</span> <span class="tick-value">$5.391</span> <span class="tick-up">▲ +2,1%</span></div>
+  <div class="tick-item"><span class="tick-label">EUR/USD</span> <span class="tick-value">1,1726</span> <span class="tick-down">▼ −0,4%</span></div>
+  <div class="tick-item"><span class="tick-label">BTC</span> <span class="tick-value">$56.400</span> <span class="tick-up">▲ +0,9%</span></div>
 </div>
 
 <div class="container">
@@ -335,164 +460,206 @@
   <div class="section-label">📊 Märkte im Überblick</div>
   <div class="market-grid">
     <div class="market-card">
-      <div class="m-label">DAX</div>
-      <div class="m-value">25.289</div>
-      <div class="m-change up">+0,5%</div>
-    </div>
-    <div class="market-card">
-      <div class="m-label">S&P 500</div>
-      <div class="m-value">6.886</div>
-      <div class="m-change up">≈ flat</div>
-    </div>
-    <div class="market-card">
-      <div class="m-label">Bitcoin</div>
-      <div class="m-value">$57.400</div>
-      <div class="m-change up">+0,4%</div>
+      <div class="m-label">Öl (Brent)</div>
+      <div class="m-value">$82,37</div>
+      <div class="m-change down">+10% WE</div>
     </div>
     <div class="market-card">
       <div class="m-label">Gold</div>
-      <div class="m-value">$5.185</div>
-      <div class="m-change up">+0,1%</div>
+      <div class="m-value">$5.391</div>
+      <div class="m-change up">+2,1%</div>
+    </div>
+    <div class="market-card">
+      <div class="m-label">DAX (Erw.)</div>
+      <div class="m-value">&lt;25.000</div>
+      <div class="m-change down">Kriegsrisikoabschlag</div>
+    </div>
+    <div class="market-card">
+      <div class="m-label">Lufthansa</div>
+      <div class="m-value">Flüge gestrichen</div>
+      <div class="m-change down">bis 8. März</div>
     </div>
   </div>
 
+  <!-- KRISEN-ALERT -->
+  <div class="section-label">🚨 Geopolitik – Eskalation im Nahen Osten</div>
+  <div class="alert-box">
+    <div class="alert-label">🇮🇱 Operation "Brüllender Löwe" – Israel & USA vs. Iran</div>
+    <strong style="color:#f85149; font-size:15px;">Krieg im Nahen Osten: USA und Israel greifen Iran an – Khamenei tot, Region in Aufruhr</strong>
+  </div>
+
   <!-- HERO STORY -->
-  <div class="section-label">🔥 Das Thema des Tages</div>
   <div class="hero-story">
-    <div class="hs-badge">🎬 Hollywood-Deal – Netflix zieht sich zurück</div>
-    <h2>Netflix gibt Bieterkampf um Warner Bros. Discovery auf – Paramount übernimmt, CNN wechselt den Besitzer</h2>
+    <div class="hs-badge">🌍 Das Thema des Wochenendes</div>
+    <h2>USA &amp; Israel starten Präventivschlag gegen Iran – Ayatollah Khamenei getötet – Ölpreis explodiert</h2>
     <p>
-      Der größte M&A-Deal der Medienbranche seit Jahren entscheidet sich: Netflix hat erklärt, kein höheres Angebot für Warner Bros. Discovery vorzulegen. Paramount Skydance – geführt von David Ellison, Sohn von Oracle-Gründer Larry Ellison – hatte sein Gebot zuletzt auf 111 Mrd. USD für den gesamten Konzern erhöht (zuvor: 30 → 31 USD je Aktie). Netflix hatte nur rund 83 Mrd. USD für das Studio- und Streaming-Geschäft geboten, ohne die TV-Sparten. Der Warner-Verwaltungsrat stufte das Paramount-Angebot als überlegen ein. Netflix hatte vier Tage Zeit für ein Gegenangebot – und ließ sie verstreichen. Ein weiteres Überbieten, so Netflix, wäre finanziell nicht mehr attraktiv gewesen.
+      Das Wochenende stand im Zeichen eines historischen Bruchs: In der Nacht auf Samstag, den 28. Februar 2026, starteten die USA und Israel koordinierte Luftangriffe auf den Iran – Zielname intern „Operation Brüllender Löwe". Der 86-jährige Oberste Führer Ayatollah Ali Khamenei kam ums Leben, als sein Residenzkomplex in Teheran von gezielten Schlägen getroffen wurde. Berichten zufolge hatte der US-Geheimdienst CIA über Monate seinen Aufenthaltsort überwacht und den genauen Zeitpunkt der Angriffe auf ein Treffen hochrangiger iranischer Offizieller abgestimmt. Das US-Militär gab an, in den ersten 24 Stunden über 1.000 Ziele angegriffen zu haben – darunter Hauptquartier der Revolutionsgarden, Luftabwehrsysteme und Raketendepots. Auslöser war das gescheiterte Atomabkommen: Trump hatte dem Iran ein Ultimatum bis Anfang März gestellt.
     </p>
     <p>
-      Die Börse feiert: Netflix-Aktie steigt nachbörslich +8,5 % auf 91,79 USD. Analysten applaudieren der Kostendisziplin. Jefferies bestätigt „Buy" mit Kursziel 134 USD und sieht weiterhin 10 % Umsatzwachstum p.a. bis 2030. Netflix kündigt zudem ein Aktienrückkaufprogramm an. Paramount gewinnt +4,7 %, Warner verliert −1,7 %. Politisch brisant: CNN landet damit unter dem Dach der Trump-nahen Ellison-Familie – kritische Beobachter befürchten einen Verlust redaktioneller Unabhängigkeit.
+      Der Iran schlug zurück: Hunderte Marschflugkörper und Drohnen wurden auf Israel und US-Militärstützpunkte in Bahrain, Katar, Kuwait und den Emiraten abgefeuert. In Tel Aviv wurden Raketen abgefangen, einige schlugen in Wohngebieten ein. Der Nationale Notstand wurde in Israel ausgerufen, der Ben-Gurion-Flughafen blieb bis Montag geschlossen. Rund 100.000 Israelis sind im Ausland gestrandet. Die Hisbollah im Libanon hat sich mit dem Iran solidarisiert und greift ebenfalls Israel an. Die Marktreaktion: Öl (Brent) schoss um über 10 % auf bis zu 82,37 USD – die Straße von Hormuz ist eingeschränkt, über die täglich ein Fünftel des weltweiten Öls transportiert wird. Gold stieg um +2,1 %. Der DAX dürfte heute deutlich unter 25.000 Punkten eröffnen.
     </p>
     <div class="hero-stats">
       <div class="hs-stat">
-        <div class="hss-label">Netflix nachbörslich</div>
-        <div class="hss-value">+8,5 %</div>
+        <div class="hss-label">Öl-Spike (Brent)</div>
+        <div class="hss-value">+10 %</div>
       </div>
       <div class="hs-stat">
-        <div class="hss-label">Paramount-Gebot</div>
-        <div class="hss-value">111 Mrd. $</div>
+        <div class="hss-label">Gold (Safe Haven)</div>
+        <div class="hss-value">+2,1 %</div>
       </div>
       <div class="hs-stat">
-        <div class="hss-label">Vertragsstrafe an Netflix</div>
-        <div class="hss-value">2,8 Mrd. $</div>
+        <div class="hss-label">Flüge gestrichen</div>
+        <div class="hss-value">&gt;3.400</div>
       </div>
     </div>
   </div>
 
   <!-- NEWS -->
-  <div class="section-label">📰 Top-News heute</div>
+  <div class="section-label">📰 Weitere Top-News des Wochenendes</div>
   <div class="news-list">
-
-    <div class="news-item">
-      <div class="news-icon">🛡️</div>
-      <div class="news-content">
-        <span class="news-tag tag-green">Rüstung</span>
-        <h3>HENSOLDT: Auftragsrekord von 4,7 Mrd. EUR – Aktie dennoch unter Druck</h3>
-        <p>Radar-Spezialist HENSOLDT verzeichnete 2025 Aufträge im Wert von 4,7 Mrd. EUR (+62 % YoY) – getrieben vom europäischen Rüstungsboom. Umsatz: 2,46 Mrd. EUR (+10 %). EBITDA: 452 Mio. EUR (+12 %). Für 2026 erwartet CEO Dörre 2,75 Mrd. EUR Umsatz. Die Aktie verliert dennoch bis zu 6 %, weil Analysten mehr erhofft hatten – Dividende (0,55 EUR) und EBITDA-Marge (18,4 %) verfehlen leicht die Konsenserwartungen. Jefferies kritisiert: Ausblick liegt 2 % unter Markterwartungen.</p>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-icon">⚗️</div>
-      <div class="news-content">
-        <span class="news-tag tag-yellow">Chemie</span>
-        <h3>BASF: Jahresbericht 2025 – verfehltes EBITDA-Ziel, vorsichtiger Ausblick, stabile Dividende</h3>
-        <p>BASF präsentierte heute seinen vollständigen Geschäftsbericht 2025. Das EBITDA vor Sondereinflüssen sank um 9,5 % auf 6,6 Mrd. EUR – die eigene Prognose (6,7–7,1 Mrd.) wurde unterschritten. Positiv: Free Cashflow 1,3 Mrd. EUR (deutlich über Prognose), Nettogewinn stieg von 1,3 auf 1,6 Mrd. EUR. Für 2026 erwartet BASF ein EBITDA von 6,2–7,0 Mrd. EUR. Dividende bleibt stabil bei 2,25 EUR (~4,5 % Rendite). Sparprogramm verschärft auf 2,3 Mrd. EUR jährlich. Aktienrückkauf läuft bis 2028 (4 Mrd. EUR Gesamtvolumen).</p>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-icon">📦</div>
-      <div class="news-content">
-        <span class="news-tag tag-red">Bilanzskandal</span>
-        <h3>Gerresheimer: BaFin weitet Prüfung massiv aus – Aktie auf Jahrzehnt-Tief</h3>
-        <p>Das Trauerspiel eskaliert: Die BaFin weitet ihre Bilanzprüfung auf weitere Zeiträume aus – nun auch auf den Halbjahresbericht 2024/25. Neue Vorwürfe: fehlerhafte Leasingverbindlichkeiten (65,5 Mio. EUR), falsche Nutzungsdauern von Entwicklungskosten (29,4 Mio. EUR) und zu späte Wertminderungen im Segment Advanced Technologies (196,5 Mio. EUR). Die Aktie fiel auf unter 15 EUR – ein Niveau zuletzt 2009. Seit Jahresbeginn: −40 %. Die Aktionärsvereinigung DSW prüft Schadenersatzklagen.</p>
-      </div>
-    </div>
 
     <div class="news-item">
       <div class="news-icon">🤖</div>
       <div class="news-content">
-        <span class="news-tag tag-purple">KI / Tech</span>
-        <h3>Nvidia-Nachbeben: Nasdaq schwächelt – Markt verdaut Rekordzahlen</h3>
-        <p>Nvidia lieferte Mittwochabend Rekordumsätze (68,1 Mrd. USD) und starken Ausblick (78 Mrd. USD Q1). Trotzdem fiel die Aktie gestern −1 % – klassische "sell the news"-Reaktion. Der Nasdaq 100 verlor −1,2 %, Broadcom −5 % bis −7 %. Salesforce verlor trotz guter Zahlen, weil der Umsatzausblick 2026/27 von 46 Mrd. USD nur im Rahmen der Erwartungen lag. Der Markt straft alles, was nicht dramatisch übertrifft. KI-Infrastruktur bleibt intakt – aber die Bewertungsluft wird dünner.</p>
+        <span class="news-tag tag-purple">KI / Big Tech</span>
+        <h3>OpenAI schreibt Geschichte: $110 Mrd. Funding – Amazon investiert $50 Mrd., Nvidia &amp; SoftBank je $30 Mrd.</h3>
+        <p>Am Freitag, 27. Februar, gab OpenAI die größte private Finanzierungsrunde in der Geschichte des Silicon Valley bekannt: 110 Milliarden US-Dollar, angeführt von Amazon ($50 Mrd.), Nvidia ($30 Mrd.) und SoftBank ($30 Mrd.). OpenAI wird damit mit rund 730 Mrd. USD pre-money bewertet – mehr als doppelt so viel wie vor einem Jahr ($300 Mrd.). Amazons Investition beginnt mit $15 Mrd. sofort; weitere $35 Mrd. folgen, wenn bestimmte Meilensteine erreicht werden – Berichten zufolge zählt dazu möglicherweise das Erreichen von AGI oder ein Börsengang bis Ende 2028. Dazu gibt es eine strategische Partnerschaft: AWS wird exklusiver Drittanbieter-Cloud-Distributor für OpenAIs Enterprise-Plattform „Frontier". OpenAI wird zudem 2 Gigawatt Amazons Trainium-Chips abnehmen. Das bestehende AWS-Abkommen ($38 Mrd.) wird um $100 Mrd. auf acht Jahre erweitert. Microsoft betonte, dass seine Partnerschaft mit OpenAI unverändert bestehe – und dass Azure weiterhin exklusiver Anbieter für „stateless" OpenAI-APIs bleibe. CEO Sam Altman: „KI wird überall stattfinden."</p>
       </div>
     </div>
 
     <div class="news-item">
-      <div class="news-icon">🛵</div>
+      <div class="news-icon">🔪</div>
       <div class="news-content">
-        <span class="news-tag tag-red">Lieferdienste</span>
-        <h3>Delivery Hero: Profitabilitätsziel 2025 erreicht – Aktie trotzdem −3,6 %</h3>
-        <p>Der Berliner Lieferkonzern erreichte sein bereinigtes EBITDA-Ziel für 2025 von 900–940 Mio. EUR (Vorjahr: 693 Mio. EUR) – ein Meilenstein auf dem langen Weg zur Profitabilität. Jahresumsatz: 14,8 Mrd. EUR (+16 %), GMV: 49,2 Mrd. EUR. Das Schlussquartal enttäuschte jedoch: GMV von 12,4 Mrd. EUR lag unter Analystenerwartungen von 12,7 Mrd. EUR, Umsatz 3,88 Mrd. EUR (Konsens: 3,97 Mrd.). CEO Östberg betont Resilienz trotz starkem Wettbewerbsdruck in Saudi-Arabien und Asien. Bernstein Research bestätigt „Outperform". Aktie verliert −3,6 % auf 20,03 EUR.</p>
+        <span class="news-tag tag-red">KI-Disruption</span>
+        <h3>Block (Square/Cash App): Jack Dorsey entlässt fast die Hälfte der Belegschaft – 4.000 Jobs weg, KI ist der Grund</h3>
+        <p>Der US-Fintech-Konzern Block (Square, Cash App, Afterpay) streicht über 4.000 Stellen – fast die Hälfte der gesamten Belegschaft. Von ehemals 10.000+ Mitarbeitern sollen künftig nur noch ~6.000 bei Block arbeiten. CEO Jack Dorsey begründete den drastischen Schritt mit der KI-Revolution: Das firmeneigene Tool „Goose" habe die Ingenieur-Produktivität seit September 2025 um über 40 % gesteigert – das mache Tausende von Stellen obsolet. „Ein deutlich kleineres Team kann mit den Tools, die wir entwickeln, mehr leisten – und es besser machen", schrieb Dorsey im Aktionärsbrief. Die Q4-Zahlen waren stark: Umsatz 6,25 Mrd. USD, Bruttogewinn +24 % auf 2,87 Mrd. USD. Für 2026 erwartet Block ein Bruttogewinnwachstum von 18 %. Die Aktie schoss nachbörslich um +22–24 % in die Höhe – Investoren feiern die Effizienzoffensive. Dorsey: „Die meisten Unternehmen werden innerhalb des nächsten Jahres zum selben Schluss kommen."</p>
       </div>
     </div>
 
+    <div class="news-item">
+      <div class="news-icon">🎬</div>
+      <div class="news-content">
+        <span class="news-tag tag-blue">Hollywood M&A</span>
+        <h3>Warner Bros. Discovery-Übernahme offiziell besiegelt: Paramount &amp; Ellison übernehmen – CNN unter Trump-nahem Dach</h3>
+        <p>Am Montag, 2. März, unterzeichneten Warner Bros. Discovery und Paramount Skydance die Übernahmevereinbarung – der Deal ist damit offiziell. Paramount, geführt von David Ellison (Sohn von Larry Ellison), bietet rund 111 Mrd. USD für den gesamten Konzern inkl. HBO, DC-Universum (Batman, Superman), Harry Potter und CNN. Netflix war zuvor aus dem Bieterstreit ausgestiegen und zahlt als Vertragsstrafe 2,8 Mrd. USD an Warner – diese Strafe übernimmt Paramount. Larry Ellison (Vermögen ~$200 Mrd.) garantiert persönlich große Teile des Kaufpreises. Politisch brisant: CNN wechselt damit unter das Dach der Trump-nahen Ellison-Familie. Kritiker befürchten den Verlust redaktioneller Unabhängigkeit. Der Deal steht noch unter Vorbehalt der Wettbewerbsprüfung durch Generalstaatsanwalt Rob Bonta (Kalifornien) und US-Wettbewerbshüter in Washington. Paramount ist bereit, im Fall des Scheiterns 7 Mrd. USD Strafe zu zahlen. Netflix-Aktie stieg am Freitag um +13,77 % auf 96,24 USD.</p>
+      </div>
+    </div>
+
+    <div class="news-item">
+      <div class="news-icon">🏦</div>
+      <div class="news-content">
+        <span class="news-tag tag-yellow">US-Aktie</span>
+        <h3>Berkshire Hathaway: Buffetts letzte Bilanz – Umsatz verfehlt Erwartungen, erster Aktionärsbrief von Greg Abel</h3>
+        <p>Warren Buffetts letzter Annual Report als CEO liegt vor – und er enttäuscht. Berkshire Hathaway erzielte 2025 einen Umsatz von 371,44 Mrd. USD (Vorjahr: 371,43 Mrd.) – Analysten hatten 385 Mrd. USD erwartet. Der Nettogewinn sank von 89,56 Mrd. auf 67,27 Mrd. USD. EPS (A-Aktie): 46,56 USD vs. 61,90 USD im Vorjahr. Zum Jahreswechsel 2025/26 übergab Buffett das Steuer an seinen langjährigen Stellvertreter Greg Abel. Der diesjährige Aktionärsbrief stammt erstmals von Abel – nicht von Buffett. Die Berkshire-Hauptversammlung findet am 2. Mai 2026 statt. Die Aktie verliert im vorbörslichen Handel. UBS hält „Buy" auf den Titel.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- INSIDER-TRADE -->
+  <div class="section-label">🕵️ Insider-Trade der Woche</div>
+  <div class="insider-box">
+    <div class="ib-label">📊 Auffälliger Kauf – KKR &amp; Co.</div>
+    <h2>KKR-Insider kauft für $25,6 Mio. – das stärkste Insider-Signal der Woche</h2>
+    <div class="insider-grid">
+      <div class="ig-stat">
+        <div class="ig-label">Kaufvolumen</div>
+        <div class="ig-value">$25,6 Mio.</div>
+      </div>
+      <div class="ig-stat">
+        <div class="ig-label">Transaktionen</div>
+        <div class="ig-value">2 Trades</div>
+      </div>
+      <div class="ig-stat">
+        <div class="ig-label">Kategorie</div>
+        <div class="ig-value">Vorstandskauf</div>
+      </div>
+    </div>
+    <p style="font-size:13px; color:#c9d1d9; line-height:1.7; margin-top:10px;">
+      Der auffälligste Insider-Trade der vergangenen Woche kam von KKR &amp; Co., dem US-amerikanischen Investmentgiganten: Insider kauften Anteile im Wert von rund 25,6 Mio. USD – in zwei Transaktionen. Wenn Vorstände eines Private-Equity-Unternehmens in dieser Größenordnung in das eigene Papier investieren, ist das ein starkes Signal. KKR hat zuletzt stark von steigenden Zinsen profitiert, da Credit-Produkte im Portfolio wachsen. Weitere nennenswerte Insider-Käufe in Deutschland: Commerzbank (1,13 Mio. EUR), freenet (498 TEUR), thyssenkrupp (488 TEUR). Verkaufsseitig fallen in den USA Palantir (-137 Mio. USD) und Vertex Pharmaceuticals (-32 Mio. USD) auf – klassische Gewinnmitnahmen nach starker Performance.
+    </p>
+    <p style="font-size:12px; color:#8b949e; margin-top:8px;">
+      Quelle: <a href="https://www.insiderkauf.de" style="color:#3fb950; text-decoration:none;">insiderkauf.de</a> · Alle Angaben ohne Gewähr · Kein Anlagehinweis
+    </p>
   </div>
 
   <!-- AKTIE IM FOKUS -->
   <div class="section-label">⭐ Aktie im Fokus</div>
   <div class="stock-box">
-    <div class="sb-label">🎬 Deal geplatzt – Aktie hebt ab</div>
-    <h2>Netflix – Kostendisziplin siegt über Hollywood-Ehrgeiz</h2>
+    <div class="sb-label">🤖 KI-Disruption in Echtzeit</div>
+    <h2>Block Inc. – Wenn KI 4.000 Jobs streicht und die Börse applaudiert</h2>
     <div class="stock-meta">
       <div class="sm-item">
         <div class="sm-label">Kurs nachbörslich</div>
-        <div class="sm-val up">~91,79 USD</div>
+        <div class="sm-val up">63,52 USD</div>
       </div>
       <div class="sm-item">
         <div class="sm-label">Nachbörslich</div>
-        <div class="sm-val up">+8,5 %</div>
+        <div class="sm-val up">+16–24 %</div>
       </div>
       <div class="sm-item">
-        <div class="sm-label">Jefferies-Ziel</div>
-        <div class="sm-val">134 USD</div>
+        <div class="sm-label">Bruttogewinn Q4</div>
+        <div class="sm-val">2,87 Mrd. USD</div>
       </div>
       <div class="sm-item">
-        <div class="sm-label">Rating Jefferies</div>
-        <div class="sm-val up">Buy</div>
+        <div class="sm-label">Wachstum Q4</div>
+        <div class="sm-val up">+24 % YoY</div>
       </div>
     </div>
     <p style="font-size:13px; color:#c9d1d9; line-height:1.7;">
-      Der Rückzug aus dem Warner-Deal ist aus Investorensicht eine kluge Entscheidung: Netflix vermeidet eine Milliarden-Übernahme mit unklaren Synergien und bleibt fokussiert auf seine Kernkompetenz – Streaming. Stattdessen kündigt das Unternehmen ein Aktienrückkaufprogramm an. Jefferies sieht weiterhin 10 % Umsatzwachstum p.a. bis 2030 und durchschnittlich 20 % Ergebnisplus – ganz ohne Hollywood-Akquisition. Netflix-Aktie war in den vergangenen Monaten wegen der teuren Übernahmepläne unter Druck geraten – der Rückzieher wirkt wie eine Befreiung.
+      Block ist der Vorbote einer Entwicklung, die viele Unternehmen in den nächsten 12–24 Monaten durchlaufen werden: profitable Geschäfte, aber drastischer Personalabbau auf Kosten von KI-Tools. Dorsey macht nicht aus der Not heraus Entlassungen – Block wächst profitabel. Er handelt proaktiv, weil die eigenen KI-Tools bereits so leistungsfähig sind, dass 40 % weniger Personal die gleiche Arbeit schafft. Die Börse honoriert genau das. Für Investoren stellt sich die entscheidende Frage: Welche Unternehmen folgen als nächste? Block könnte der Katalysator für eine breite Diskussion über die wirtschaftlichen Folgen von KI werden.
     </p>
   </div>
 
+  <!-- PODCAST PROMO -->
+  <div class="section-label">🎙️ Unser Podcast</div>
+  <div class="podcast-box">
+    <div class="podcast-icon">🎧</div>
+    <div class="podcast-content">
+      <div class="pc-label">Neue Folge – jetzt reinhören</div>
+      <h3>„Bitcoin steigt für immer" – Zu Gast: Roman Reher alias Blocktrainer</h3>
+      <p>
+        In der neuesten Folge des aktien.kauf Podcasts war Roman Reher – bekannt als „Blocktrainer" und der bekannteste Bitcoin-Experte im deutschsprachigen Raum – zu Gast. Warum könnte Bitcoin in 20 Jahren zwischen 1 und 10 Mio. EUR wert sein? Was passiert, wenn Staaten Bitcoin als Reserve halten müssen? Und wie verhält sich Bitcoin in Kriegszeiten wie diesen – als Safe-Haven-Asset oder als spekulativer Token? Passt perfekt zur aktuellen Nachrichtenlage: Gold steigt, Bitcoin steigt – digitales Gold in Krisenzeiten?
+      </p>
+      <a href="https://linktr.ee/aktien.kauf" class="podcast-cta">▶ Jetzt hören – Spotify &amp; Apple Podcasts</a>
+    </div>
+  </div>
+
   <!-- AUSBLICK -->
-  <div class="section-label">🎯 Ausblick: Was heute noch wichtig wird</div>
+  <div class="section-label">🎯 Was diese Woche wichtig wird</div>
   <div class="outlook-box">
-    <h3>Das beobachten wir</h3>
+    <h3>Die wichtigsten Beobachtungspunkte</h3>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Netflix &amp; Paramount: Wettbewerbsprüfung läuft an:</strong> Kaliforniens Generalstaatsanwalt Rob Bonta hat bereits Wettbewerbsbedenken angemeldet. Auch Washington wird den 111-Mrd.-USD-Deal prüfen. Die Ellisons setzen auf Trumps positives Umfeld – wie das ausgeht, wird Wochen oder Monate dauern.</div>
+      <div><strong>Nahost-Eskalation – Ölpreis &amp; Straße von Hormuz:</strong> Der Iran hat den Schiffsverkehr durch die Straße von Hormuz eingeschränkt – täglich werden dort rund 20 % des globalen Öls transportiert. Bleibt die Meerenge blockiert, drohen Ölpreise über 90 USD. Energieaktien (Shell, BP, TotalEnergies) dürften profitieren, Fluggesellschaften geraten massiv unter Druck.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Delivery Hero Vollständige Jahreszahlen:</strong> Nach dem Trading Update werden heute Analysten die finalen Zahlen bewerten. Bernstein Research hält „Outperform" – entscheidend ist, wie das Unternehmen den Ausblick 2026 konkretisiert, insbesondere für die Talabat-Sparte und das Asiengeschäft.</div>
+      <div><strong>DAX – Krisenmodus:</strong> Der DAX dürfte heute deutlich unter 25.000 Punkte eröffnen. Rüstungswerte (Rheinmetall, HENSOLDT) könnten profitieren, Reisewerte und Airlines verlieren. Lufthansa hat alle Nahost-Flüge bis 8. März gestrichen.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>Gerresheimer-Krise:</strong> Wann kommt eine Reaktion des Vorstands? CEO-Statement oder Kapitalmaßnahmen wären mögliche nächste Schritte. Die DSW-Ankündigung, Schadenersatz zu prüfen, erhöht den Druck erheblich.</div>
+      <div><strong>OpenAI &amp; AWS-Partnerschaft – Auswirkungen auf den Cloud-Markt:</strong> Analysten erwarten, dass der $100-Mrd.-Deal OpenAIs AWS-Nutzung drastisch skaliert. Das gibt AWS-Aktien (Amazon) Rückenwind, belastet aber Konkurrenten wie Microsoft Azure und Google Cloud. Microsoft betont: Die eigene OpenAI-Partnerschaft bleibt unverändert.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>HENSOLDT-Kurs stabilisiert sich?</strong> Nach dem Rückgang gestern (-6 %) wird heute der Handel zeigen, ob Investoren die starken Auftragsbestände (4,7 Mrd. EUR Backlog) als Chance sehen. Barclays hält "Equal Weight" mit Kursziel 97 EUR.</div>
+      <div><strong>Block-Effekt: Welches Unternehmen macht als nächstes KI-Stellenabbau?</strong> Dorsey sagte explizit: „Die meisten Unternehmen werden innerhalb des nächsten Jahres zum selben Schluss kommen." Tech-, Fintech- und Medienunternehmen mit hohem Personalanteil bei repetitiven Aufgaben stehen im Fokus.</div>
     </div>
     <div class="outlook-item">
       <div class="oi-dot"></div>
-      <div><strong>DAX: Wochenschluss bei 25.000+?</strong> Der DAX hält sich trotz Nasdaq-Schwäche über 25.000. Rüstungs- und Industriewerte stützen. Entscheidend: Hält der Index heute über 25.100, wäre das eine konstruktive Wochenbilanz.</div>
+      <div><strong>Warner/Paramount-Deal – Wettbewerbsprüfung läuft:</strong> Generalstaatsanwalt Bonta und Washingtoner Wettbewerbshüter werden den $111-Mrd.-Deal unter die Lupe nehmen. Die politische Nähe der Ellisons zu Trump könnte den Prozess beschleunigen – oder neue Kontroversen entfachen.</div>
+    </div>
+    <div class="outlook-item">
+      <div class="oi-dot"></div>
+      <div><strong>KKR &amp; der Insider-Trade:</strong> Nach dem Vorstandskauf von $25,6 Mio. wird der Markt in dieser Woche beobachten, wie KKR mit dem Geopolitikschock umgeht. Private-Equity ist oft anfälliger für Krisenstimmung – aber auch schneller in der Lage, günstige Assets aufzukaufen.</div>
     </div>
   </div>
 
   <!-- ZITAT -->
-  <div class="section-label">💬 Zitat des Tages</div>
+  <div class="section-label">💬 Zitat des Wochenendes</div>
   <div class="quote-box">
-    <blockquote>"Die geopolitische Lage zwingt Europa zu einer nachhaltigen Stärkung seiner Verteidigungsfähigkeit. Das sehen wir nicht nur in steigenden Budgets, sondern seit dem letzten Halbjahr auch in beschleunigten und konkreten Beschaffungsentscheidungen."</blockquote>
-    <div class="attribution">— Oliver Dörre, CEO HENSOLDT, Jahresergebnisse 26. Februar 2026</div>
+    <blockquote>„Ein deutlich kleineres Team kann mit den Instrumenten, die wir entwickeln, mehr leisten – und es besser machen. Innerhalb des nächsten Jahres werden die meisten Unternehmen zum selben Schluss kommen."</blockquote>
+    <div class="attribution">— Jack Dorsey, CEO Block Inc., Aktionärsbrief Q4 2025, 27. Februar 2026</div>
   </div>
 
 </div>
@@ -500,9 +667,9 @@
 <!-- FOOTER -->
 <div class="footer">
   <strong>aktien.kauf</strong> · Podcast · Morning Briefing<br>
-  <a href="https://aktienkauf.github.io/briefing/">aktienkauf.github.io/briefing</a>
+  <a href="https://linktr.ee/aktien.kauf">linktr.ee/aktien.kauf</a> · Spotify &amp; Apple Podcasts
   <div class="disclaimer">
-    Dieses Briefing dient ausschließlich zur Information und stellt keine Anlageberatung dar. Alle Kursangaben sind indikativ und können abweichen. Investieren birgt Risiken. Bitte trifft eigene Entscheidungen auf Basis eigener Recherche.
+    Dieses Briefing dient ausschließlich zur Information und stellt keine Anlageberatung dar. Alle Kursangaben sind indikativ und können abweichen. Investieren birgt Risiken. Bitte triff eigene Entscheidungen auf Basis eigener Recherche.
   </div>
 </div>
 
