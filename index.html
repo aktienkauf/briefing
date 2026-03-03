@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morning Briefing – Wochenend-Edition 1./2. März 2026</title>
+<title>Morning Briefing – Dienstag, 3. März 2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -128,7 +128,7 @@
   .up { color: #3fb950; }
   .down { color: #f85149; }
 
-  /* ALERT BOX – war */
+  /* ALERT BOX */
   .alert-box {
     background: linear-gradient(135deg, #1f0a0a, #1a1016);
     border: 1px solid rgba(248,81,73,0.4);
@@ -148,529 +148,320 @@
     color: #f85149;
     margin-bottom: 6px;
   }
-
-  /* HERO STORY */
-  .hero-story {
-    background: linear-gradient(135deg, #1c2333, #161b22);
-    border: 1px solid #30363d;
-    border-left: 4px solid #f0b429;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-  }
-  .hero-story .hs-badge {
-    font-size: 10px;
+  .alert-box .alert-title {
+    font-size: 15px;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #f0b429;
+    color: #ffffff;
     margin-bottom: 8px;
   }
-  .hero-story h2 {
-    font-size: 19px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-  .hero-story p {
-    font-size: 14px;
-    color: #c9d1d9;
-    line-height: 1.7;
-    margin-bottom: 10px;
-  }
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-top: 14px;
-  }
-  @media(max-width: 450px) { .hero-stats { grid-template-columns: repeat(2,1fr); } }
-  .hs-stat {
-    background: rgba(240,180,41,0.08);
-    border: 1px solid rgba(240,180,41,0.2);
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-  }
-  .hs-stat .hss-label { font-size: 10px; color: #8b949e; letter-spacing: 0.5px; margin-bottom: 3px; }
-  .hs-stat .hss-value { font-size: 15px; font-weight: 700; color: #f0b429; }
 
-  /* NEWS ITEMS */
-  .news-list { margin-bottom: 28px; }
-  .news-item {
+  /* NEWS CARD */
+  .news-card {
     background: #161b22;
     border: 1px solid #21262d;
-    border-radius: 8px;
-    padding: 16px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .news-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .news-content h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #e6edf3;
-    margin-bottom: 4px;
-    line-height: 1.3;
-  }
-  .news-content p {
-    font-size: 13px;
-    color: #8b949e;
-    line-height: 1.6;
-  }
-  .news-tag {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding: 2px 7px;
-    border-radius: 4px;
-    margin-bottom: 6px;
-  }
-  .tag-red { background: rgba(248,81,73,0.15); color: #f85149; }
-  .tag-green { background: rgba(63,185,80,0.15); color: #3fb950; }
-  .tag-yellow { background: rgba(240,180,41,0.15); color: #f0b429; }
-  .tag-blue { background: rgba(88,166,255,0.15); color: #58a6ff; }
-  .tag-purple { background: rgba(188,140,255,0.15); color: #bc8cff; }
-  .tag-orange { background: rgba(255,159,28,0.15); color: #ff9f1c; }
-
-  /* INSIDER TRADE BOX */
-  .insider-box {
-    background: linear-gradient(135deg, #0f1d12, #161b22);
-    border: 1px solid rgba(63,185,80,0.3);
-    border-left: 4px solid #3fb950;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-  }
-  .insider-box .ib-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #3fb950;
-    margin-bottom: 8px;
-  }
-  .insider-box h2 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-    line-height: 1.3;
-  }
-  .insider-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin: 12px 0;
-  }
-  @media(max-width: 450px) { .insider-grid { grid-template-columns: repeat(2,1fr); } }
-  .ig-stat {
-    background: rgba(63,185,80,0.07);
-    border: 1px solid rgba(63,185,80,0.2);
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-  }
-  .ig-stat .ig-label { font-size: 10px; color: #8b949e; margin-bottom: 3px; }
-  .ig-stat .ig-value { font-size: 14px; font-weight: 700; color: #3fb950; }
-
-  /* AKTIE DES TAGES */
-  .stock-box {
-    background: linear-gradient(135deg, #1a1a2e, #161b22);
-    border: 1px solid #58a6ff44;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-  }
-  .stock-box .sb-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #58a6ff;
-    margin-bottom: 8px;
-  }
-  .stock-box h2 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-  .stock-meta {
-    display: flex;
-    gap: 16px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-  }
-  .sm-item { text-align: left; }
-  .sm-label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
-  .sm-val { font-size: 14px; font-weight: 700; color: #e6edf3; }
-
-  /* PODCAST PROMO */
-  .podcast-box {
-    background: linear-gradient(135deg, #1a1025, #161b22);
-    border: 1px solid rgba(188,140,255,0.35);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 28px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .podcast-icon {
-    font-size: 40px;
-    flex-shrink: 0;
-  }
-  .podcast-content .pc-label {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #bc8cff;
-    margin-bottom: 6px;
-  }
-  .podcast-content h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
-    line-height: 1.3;
-  }
-  .podcast-content p {
-    font-size: 13px;
-    color: #8b949e;
-    line-height: 1.6;
-    margin-bottom: 12px;
-  }
-  .podcast-cta {
-    display: inline-block;
-    background: rgba(188,140,255,0.15);
-    border: 1px solid rgba(188,140,255,0.4);
-    color: #bc8cff;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-  }
-  .podcast-cta:hover { background: rgba(188,140,255,0.25); }
-
-  /* OUTLOOK */
-  .outlook-box {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 28px;
-  }
-  .outlook-box h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: #e6edf3;
-    margin-bottom: 12px;
-  }
-  .outlook-item {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 13px;
-    color: #c9d1d9;
-    line-height: 1.5;
-  }
-  .outlook-item .oi-dot {
-    flex-shrink: 0;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #f0b429;
-    margin-top: 6px;
-  }
-
-  /* QUOTE */
-  .quote-box {
-    background: #161b22;
-    border: 1px solid #21262d;
-    border-left: 3px solid #8b949e;
     border-radius: 8px;
     padding: 16px 20px;
-    margin-bottom: 28px;
-  }
-  .quote-box blockquote {
-    font-size: 15px;
-    font-style: italic;
+    margin-bottom: 12px;
+    font-size: 13px;
     color: #c9d1d9;
-    line-height: 1.6;
+    line-height: 1.7;
+  }
+  .news-card .news-tag {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .news-card .news-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
     margin-bottom: 8px;
+    line-height: 1.4;
   }
-  .quote-box .attribution {
-    font-size: 12px;
-    color: #8b949e;
+  .news-card .news-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
   }
+  .news-card .meta-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid;
+  }
+  .chip-green { color: #3fb950; border-color: rgba(63,185,80,0.3); background: rgba(63,185,80,0.08); }
+  .chip-red { color: #f85149; border-color: rgba(248,81,73,0.3); background: rgba(248,81,73,0.08); }
+  .chip-gold { color: #f0b429; border-color: rgba(240,180,41,0.3); background: rgba(240,180,41,0.08); }
+  .chip-blue { color: #58a6ff; border-color: rgba(88,166,255,0.3); background: rgba(88,166,255,0.08); }
+  .chip-gray { color: #8b949e; border-color: rgba(139,148,158,0.3); background: rgba(139,148,158,0.08); }
+
+  /* DIVIDER */
+  .divider { height: 1px; background: #21262d; margin: 24px 0; }
+
+  /* INLINE HIGHLIGHT */
+  .highlight { color: #f0b429; font-weight: 600; }
+  .highlight-red { color: #f85149; font-weight: 600; }
+  .highlight-green { color: #3fb950; font-weight: 600; }
+  .highlight-blue { color: #58a6ff; font-weight: 600; }
 
   /* FOOTER */
   .footer {
+    background: #0d1117;
     border-top: 1px solid #21262d;
-    padding: 20px;
+    padding: 20px 24px;
     text-align: center;
-    font-size: 11px;
-    color: #484f58;
+    font-size: 12px;
+    color: #8b949e;
   }
-  .footer a { color: #58a6ff; text-decoration: none; }
-  .footer .disclaimer {
-    font-size: 10px;
-    color: #484f58;
-    margin-top: 8px;
-    line-height: 1.5;
+  .footer a { color: #f0b429; text-decoration: none; }
+
+  /* ZOLL SPECIAL BOX */
+  .zoll-box {
+    background: linear-gradient(135deg, #0d1a2a, #0d1117);
+    border: 1px solid rgba(88,166,255,0.3);
+    border-left: 4px solid #58a6ff;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #c9d1d9;
+    line-height: 1.7;
   }
+  .zoll-box .news-tag { color: #58a6ff; }
+  .zoll-box .news-title { color: #ffffff; font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+
+  /* INTRO SUMMARY */
+  .intro-box {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: #c9d1d9;
+    line-height: 1.8;
+  }
+  .intro-box p + p { margin-top: 8px; }
 </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <div class="header">
-  <div class="header-logo">📈 aktien.kauf Podcast</div>
-  <h1>Morning Briefing</h1>
-  <div class="date">MONTAG, 2. MÄRZ 2026</div>
-  <div class="edition-badge">🔥 Wochenend-Special: 28. Feb – 2. März</div>
-  <div class="tagline">Das Wichtigste aus einem Wochenende, das die Welt verändert hat.</div>
+  <div class="header-logo">aktien.kauf Morning Briefing</div>
+  <h1>Dienstag, 3. März 2026</h1>
+  <div class="date">KW 10 · Ausgabe #126</div>
+  <div class="edition-badge">🔥 Geopolitik · Zölle · Märkte</div>
+  <div class="tagline">Was heute zählt – kompakt & ehrlich</div>
 </div>
 
-<!-- TICKER BAR – Marktdaten Montagmorgen / Wochenende -->
+<!-- TICKER BAR -->
 <div class="ticker-bar">
-  <div class="tick-item"><span class="tick-label">DAX</span> <span class="tick-value">~24.800</span> <span class="tick-down">▼ erwartet</span></div>
-  <div class="tick-item"><span class="tick-label">Öl (Brent)</span> <span class="tick-value">$82,37</span> <span class="tick-up">▲ +10%</span></div>
-  <div class="tick-item"><span class="tick-label">Gold</span> <span class="tick-value">$5.391</span> <span class="tick-up">▲ +2,1%</span></div>
-  <div class="tick-item"><span class="tick-label">EUR/USD</span> <span class="tick-value">1,1726</span> <span class="tick-down">▼ −0,4%</span></div>
-  <div class="tick-item"><span class="tick-label">BTC</span> <span class="tick-value">$56.400</span> <span class="tick-up">▲ +0,9%</span></div>
+  <div class="tick-item">
+    <span class="tick-label">DAX</span>
+    <span class="tick-value">~24.800</span>
+    <span class="tick-down">▼ –2,4%</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-label">S&P 500</span>
+    <span class="tick-value">~5.680</span>
+    <span class="tick-down">▼ –1,1%</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-label">Gold</span>
+    <span class="tick-value">~5.376 $</span>
+    <span class="tick-up">▲ +1,9%</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-label">Öl (Brent)</span>
+    <span class="tick-value">~95–100 $</span>
+    <span class="tick-up">▲ +10%</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-label">Bitcoin</span>
+    <span class="tick-value">~68.000 $</span>
+    <span class="tick-up">▲ nach Dip</span>
+  </div>
+  <div class="tick-item">
+    <span class="tick-label">EUR/CHF</span>
+    <span class="tick-value">0,9037</span>
+    <span class="tick-down">▼ 11-Jahres-Tief</span>
+  </div>
 </div>
 
+<!-- CONTAINER -->
 <div class="container">
 
-  <!-- MÄRKTE -->
-  <div class="section-label">📊 Märkte im Überblick</div>
-  <div class="market-grid">
-    <div class="market-card">
-      <div class="m-label">Öl (Brent)</div>
-      <div class="m-value">$82,37</div>
-      <div class="m-change down">+10% WE</div>
+  <!-- INTRO -->
+  <div class="intro-box">
+    <p>Guten Morgen! Die Märkte beginnen den Dienstag unter Druck – <span class="highlight-red">Nahost-Eskalation, Zoll-Chaos und ein Franken auf 11-Jahres-Hoch</span> beherrschen das Bild. Gleichzeitig schreibt Trump Geschichte: Ein globaler 10%-Sonderzoll tritt als Reaktion auf das Supreme-Court-Urteil in Kraft. Hier sind die Themen, die heute wichtig sind.</p>
+  </div>
+
+  <!-- ZITAT DES TAGES -->
+  <div class="section-label">💬 Zitat des Tages</div>
+  <div style="background: linear-gradient(135deg, #1a2332, #0d1117); border: 1px solid #30363d; border-left: 4px solid #f0b429; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px;">
+    <p style="font-size: 15px; color: #e6edf3; font-style: italic; line-height: 1.7;">"Um den Ausblick wird es Diskussionen geben, ob er konservativ oder schlicht enttäuschend ist."</p>
+    <p style="font-size: 11px; color: #8b949e; margin-top: 8px; font-weight: 600;">— Callum Elliott, Bernstein Research – über Beiersdorfs Ausblick 2026</p>
+  </div>
+
+  <!-- 1. BEIERSDORF – TOP THEMA HEUTE -->
+  <div class="section-label">🚨 Top-Thema</div>
+
+  <div class="news-card" style="border-left: 4px solid #f85149;">
+    <div class="news-tag" style="color: #f85149;">📉 DAX-Aktie im Fokus</div>
+    <div class="news-title">Beiersdorf –8%: Nivea wächst kaum – 750-Mio.-Rückkauf verpufft</div>
+    <p>Beiersdorf legt heute die Jahreszahlen 2025 vor und erntet dafür Kursverluste von rund 8 %. Der Konzern (Nivea, Tesa) erzielte 9,85 Mrd. € Umsatz bei einem organischen Wachstum von nur 2,4 % – Nivea selbst legte magere 0,9 % zu. Der gleichzeitig angekündigte Aktienrückkauf über 750 Mio. € kann die Stimmung nicht retten.</p>
+    <p style="margin-top: 8px;">Für 2026 plant der Vorstand bestenfalls leichtes Wachstum – im schlimmsten Fall Stagnation. Die bereinigte EBIT-Marge soll leicht unter dem Vorjahresniveau liegen. Störungen im US-Einzelhandel und im chinesischen Travel-Retail belasten das Consumer-Segment besonders im Q1.</p>
+    <div class="news-meta">
+      <span class="meta-chip chip-red">Aktie –8% vorbörslich</span>
+      <span class="meta-chip chip-red">Nivea-Wachstum: +0,9%</span>
+      <span class="meta-chip chip-gold">Rückkauf 750 Mio. €</span>
+      <span class="meta-chip chip-gray">Marge leicht unter VJ</span>
     </div>
-    <div class="market-card">
-      <div class="m-label">Gold</div>
-      <div class="m-value">$5.391</div>
-      <div class="m-change up">+2,1%</div>
-    </div>
-    <div class="market-card">
-      <div class="m-label">DAX (Erw.)</div>
-      <div class="m-value">&lt;25.000</div>
-      <div class="m-change down">Kriegsrisikoabschlag</div>
-    </div>
-    <div class="market-card">
-      <div class="m-label">Lufthansa</div>
-      <div class="m-value">Flüge gestrichen</div>
-      <div class="m-change down">bis 8. März</div>
+    <p style="margin-top: 10px; font-size: 12px; color: #8b949e;">💡 JPMorgan hält "Overweight" mit Ziel 125 € – Jefferies bleibt bei "Hold" mit Ziel 92 €. Konsensprognosen dürften um 3–5% nach unten revidiert werden.</p>
+  </div>
+
+  <!-- NAHOST als Update-Kasten -->
+  <div class="alert-box" style="margin-top: 16px;">
+    <div class="alert-label">🔴 Update: Nahost-Krieg – Tag 4</div>
+    <div class="alert-title">Keine Eskalation über Wochenende – aber Märkte bleiben unter Druck</div>
+    <p>Der Konflikt zwischen Israel, den USA und dem Iran läuft weiter. Nach dem Tod von Khamenei und den ersten Gegenschlägen des Iran herrscht aktuell eine angespannte Pattsituation. Luftraum über dem Nahen Osten bleibt weitgehend geschlossen – Lufthansa, TUI und Co. spüren das täglich. Neue militärische Entwicklungen heute Morgen noch ausgeblieben – aber die Lage bleibt hochvolatil.</p>
+    <div style="margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="meta-chip chip-red">Öl +10% seit Fr.</span>
+      <span class="meta-chip chip-red">Lufthansa –8%</span>
+      <span class="meta-chip chip-green">Rüstung +15%+</span>
     </div>
   </div>
 
-  <!-- KRISEN-ALERT -->
-  <div class="section-label">🚨 Geopolitik – Eskalation im Nahen Osten</div>
-  <div class="alert-box">
-    <div class="alert-label">🇮🇱 Operation "Brüllender Löwe" – Israel & USA vs. Iran</div>
-    <strong style="color:#f85149; font-size:15px;">Krieg im Nahen Osten: USA und Israel greifen Iran an – Khamenei tot, Region in Aufruhr</strong>
+  <div class="divider"></div>
+
+  <!-- 2. ZÖLLE -->
+  <div class="section-label">⚖️ Handelspolitik</div>
+
+  <div class="zoll-box">
+    <div class="news-tag" style="font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;">Supreme Court vs. Trump</div>
+    <div class="news-title">Zoll-Chaos: Supreme Court kippt Notstands-Zölle – Trump verhängt sofort globalen 10%-Aufschlag</div>
+    <p>Am 20. Februar kippte der Supreme Court (6:3) Trumps IEEPA-Zölle – 25 % auf Kanada/Mexiko, 10 % auf China – als verfassungswidrig. Die Reaktion Trumps kam prompt: Er unterzeichnete einen neuen globalen 10%-Zoll auf Basis des Trade Act (Section 122) – gültig für 150 Tage. Unternehmen könnten nun Milliarden an bereits gezahlten Zöllen zurückfordern.</p>
+    <p style="margin-top: 10px;">Heute, am 3. März 2026, läuft die erste Phase dieses neuen Zolls bereits – die Berufungsgerichte sind aber dabei, die Rückzahlung zu beschleunigen. Ein zweiter Handelskrieg droht: Trump kündigte für Ende März einen China-Besuch an – Verhandlungen scheinen möglich.</p>
+    <div style="margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap;">
+      <span class="meta-chip chip-blue">10% Globalzoll aktiv</span>
+      <span class="meta-chip chip-gold">Rückzahlungen: 130–175 Mrd. $</span>
+      <span class="meta-chip chip-red">Inflationsrisiko bleibt</span>
+    </div>
+    <p style="margin-top:10px;font-size:12px;color:#8b949e;">💡 Für deutsche Exporte gilt weiterhin 15 % Zoll auf EU-Importe – Stahl/Alu bleiben bei 50%. Das Chaos ist nicht vorbei.</p>
   </div>
 
-  <!-- HERO STORY -->
-  <div class="hero-story">
-    <div class="hs-badge">🌍 Das Thema des Wochenendes</div>
-    <h2>USA &amp; Israel starten Präventivschlag gegen Iran – Ayatollah Khamenei getötet – Ölpreis explodiert</h2>
-    <p>
-      Das Wochenende stand im Zeichen eines historischen Bruchs: In der Nacht auf Samstag, den 28. Februar 2026, starteten die USA und Israel koordinierte Luftangriffe auf den Iran – Zielname intern „Operation Brüllender Löwe". Der 86-jährige Oberste Führer Ayatollah Ali Khamenei kam ums Leben, als sein Residenzkomplex in Teheran von gezielten Schlägen getroffen wurde. Berichten zufolge hatte der US-Geheimdienst CIA über Monate seinen Aufenthaltsort überwacht und den genauen Zeitpunkt der Angriffe auf ein Treffen hochrangiger iranischer Offizieller abgestimmt. Das US-Militär gab an, in den ersten 24 Stunden über 1.000 Ziele angegriffen zu haben – darunter Hauptquartier der Revolutionsgarden, Luftabwehrsysteme und Raketendepots. Auslöser war das gescheiterte Atomabkommen: Trump hatte dem Iran ein Ultimatum bis Anfang März gestellt.
+  <div class="divider"></div>
+
+  <!-- 3. MÄRKTE / GOLD / BITCOIN -->
+  <div class="section-label">📊 Märkte im Fokus</div>
+
+  <div class="news-card">
+    <div class="news-tag" style="color: #f0b429;">Gold & Sichere Häfen</div>
+    <div class="news-title">Goldpreis über 5.400 $ – Franken auf 11-Jahres-Hoch</div>
+    <p>Die geopolitische Unsicherheit treibt Anleger in sichere Häfen. Gold stieg auf 5.376 $ (+1,9%), der Schweizer Franken fiel auf 0,9037 CHF/EUR – den tiefsten Stand seit der Frankenkrise 2015. Die SNB signalisiert Bereitschaft zum Eingreifen am Devisenmarkt.</p>
+    <div class="news-meta">
+      <span class="meta-chip chip-gold">Gold: Starker Kauf</span>
+      <span class="meta-chip chip-blue">CHF: Safe Haven</span>
+      <span class="meta-chip chip-red">EUR schwächelt</span>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-tag" style="color: #f85149;">Bitcoin</div>
+    <div class="news-title">BTC erholt sich auf ~68.000 $ – aber Unsicherheit bleibt hoch</div>
+    <p>Nach Trumps Iran-Warnung fiel Gold stark, Kapital floss kurzzeitig in Krypto (+120 Mrd. $ in 24h). Langfrist-Halter verkaufen kaum noch – ein positives Signal. Trotzdem: Die Korrelation zu Aktien (0,55) bleibt hoch, Bitcoin ist kein klassischer sicherer Hafen. Unterstützung liegt bei ~62.300 $, Widerstand bei ~79.000 $.</p>
+    <div class="news-meta">
+      <span class="meta-chip chip-gold">LTH-Verkäufe: –87%</span>
+      <span class="meta-chip chip-red">Hohe Volatilität</span>
+      <span class="meta-chip chip-gray">Kein Safe Haven</span>
+    </div>
+  </div>
+
+  <div class="news-card">
+    <div class="news-tag" style="color: #f85149;">Rüstung & Verlierer</div>
+    <div class="news-title">Lufthansa –8%, TUI bricht ein – Rüstung explodiert</div>
+    <p>Reisewerte leiden massiv: Lufthansa hat alle Flüge in den Nahen Osten ausgesetzt, TUI streicht Buchungen. Auf der Gewinnerseite: Rüstungsaktien wie Rheinmetall, Thales und BAE Systems profitieren deutlich – JPMorgan sieht europäische Rüstungskonzerne im Vorteil gegenüber US-Pendants.</p>
+    <div class="news-meta">
+      <span class="meta-chip chip-red">Lufthansa: –8%</span>
+      <span class="meta-chip chip-red">TUI: stark im Minus</span>
+      <span class="meta-chip chip-green">Rheinmetall: +15%+</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4. MÄRKTE AUSBLICK -->
+  <div class="section-label">📅 Diese Woche im Blick</div>
+
+  <div class="news-card">
+    <div class="news-tag" style="color: #58a6ff;">Wirtschaftskalender</div>
+    <div class="news-title">Was diese Woche zählt</div>
+    <p><span class="highlight">Freitag, 6. März:</span> US-Arbeitsmarktbericht Februar – Prognose: ~60.000 neue Jobs (Januar: ~130.000). Schwächere Zahlen könnten Zinshoffnungen befeuern. <br><br>
+    <span class="highlight">Donnerstag, 5. März:</span> China – Nationaler Volkskongress beginnt. Erwartetes Wachstumsziel 2026: 4,5–5 %. Fünfjahresplan für 2026–2030 wird vorgestellt.<br><br>
+    <span class="highlight">Laufend:</span> Zoll-Rückzahlungsverfahren in den USA – Berufungsgericht lehnte Verzögerungsantrag der Trump-Regierung ab. Über 1.500 Unternehmen könnten Milliarden zurückfordern.
     </p>
-    <p>
-      Der Iran schlug zurück: Hunderte Marschflugkörper und Drohnen wurden auf Israel und US-Militärstützpunkte in Bahrain, Katar, Kuwait und den Emiraten abgefeuert. In Tel Aviv wurden Raketen abgefangen, einige schlugen in Wohngebieten ein. Der Nationale Notstand wurde in Israel ausgerufen, der Ben-Gurion-Flughafen blieb bis Montag geschlossen. Rund 100.000 Israelis sind im Ausland gestrandet. Die Hisbollah im Libanon hat sich mit dem Iran solidarisiert und greift ebenfalls Israel an. Die Marktreaktion: Öl (Brent) schoss um über 10 % auf bis zu 82,37 USD – die Straße von Hormuz ist eingeschränkt, über die täglich ein Fünftel des weltweiten Öls transportiert wird. Gold stieg um +2,1 %. Der DAX dürfte heute deutlich unter 25.000 Punkten eröffnen.
-    </p>
-    <div class="hero-stats">
-      <div class="hs-stat">
-        <div class="hss-label">Öl-Spike (Brent)</div>
-        <div class="hss-value">+10 %</div>
-      </div>
-      <div class="hs-stat">
-        <div class="hss-label">Gold (Safe Haven)</div>
-        <div class="hss-value">+2,1 %</div>
-      </div>
-      <div class="hs-stat">
-        <div class="hss-label">Flüge gestrichen</div>
-        <div class="hss-value">&gt;3.400</div>
-      </div>
+    <div class="news-meta">
+      <span class="meta-chip chip-blue">Jobdaten Fr.</span>
+      <span class="meta-chip chip-gold">China-Kongress</span>
+      <span class="meta-chip chip-red">Zoll-Rückzahlungen</span>
     </div>
   </div>
 
-  <!-- NEWS -->
-  <div class="section-label">📰 Weitere Top-News des Wochenendes</div>
-  <div class="news-list">
+  <div class="divider"></div>
 
-    <div class="news-item">
-      <div class="news-icon">🤖</div>
-      <div class="news-content">
-        <span class="news-tag tag-purple">KI / Big Tech</span>
-        <h3>OpenAI schreibt Geschichte: $110 Mrd. Funding – Amazon investiert $50 Mrd., Nvidia &amp; SoftBank je $30 Mrd.</h3>
-        <p>Am Freitag, 27. Februar, gab OpenAI die größte private Finanzierungsrunde in der Geschichte des Silicon Valley bekannt: 110 Milliarden US-Dollar, angeführt von Amazon ($50 Mrd.), Nvidia ($30 Mrd.) und SoftBank ($30 Mrd.). OpenAI wird damit mit rund 730 Mrd. USD pre-money bewertet – mehr als doppelt so viel wie vor einem Jahr ($300 Mrd.). Amazons Investition beginnt mit $15 Mrd. sofort; weitere $35 Mrd. folgen, wenn bestimmte Meilensteine erreicht werden – Berichten zufolge zählt dazu möglicherweise das Erreichen von AGI oder ein Börsengang bis Ende 2028. Dazu gibt es eine strategische Partnerschaft: AWS wird exklusiver Drittanbieter-Cloud-Distributor für OpenAIs Enterprise-Plattform „Frontier". OpenAI wird zudem 2 Gigawatt Amazons Trainium-Chips abnehmen. Das bestehende AWS-Abkommen ($38 Mrd.) wird um $100 Mrd. auf acht Jahre erweitert. Microsoft betonte, dass seine Partnerschaft mit OpenAI unverändert bestehe – und dass Azure weiterhin exklusiver Anbieter für „stateless" OpenAI-APIs bleibe. CEO Sam Altman: „KI wird überall stattfinden."</p>
-      </div>
-    </div>
+  <!-- 5. DAX ANALYSE -->
+  <div class="section-label">📉 Markteinschätzung</div>
 
-    <div class="news-item">
-      <div class="news-icon">🔪</div>
-      <div class="news-content">
-        <span class="news-tag tag-red">KI-Disruption</span>
-        <h3>Block (Square/Cash App): Jack Dorsey entlässt fast die Hälfte der Belegschaft – 4.000 Jobs weg, KI ist der Grund</h3>
-        <p>Der US-Fintech-Konzern Block (Square, Cash App, Afterpay) streicht über 4.000 Stellen – fast die Hälfte der gesamten Belegschaft. Von ehemals 10.000+ Mitarbeitern sollen künftig nur noch ~6.000 bei Block arbeiten. CEO Jack Dorsey begründete den drastischen Schritt mit der KI-Revolution: Das firmeneigene Tool „Goose" habe die Ingenieur-Produktivität seit September 2025 um über 40 % gesteigert – das mache Tausende von Stellen obsolet. „Ein deutlich kleineres Team kann mit den Tools, die wir entwickeln, mehr leisten – und es besser machen", schrieb Dorsey im Aktionärsbrief. Die Q4-Zahlen waren stark: Umsatz 6,25 Mrd. USD, Bruttogewinn +24 % auf 2,87 Mrd. USD. Für 2026 erwartet Block ein Bruttogewinnwachstum von 18 %. Die Aktie schoss nachbörslich um +22–24 % in die Höhe – Investoren feiern die Effizienzoffensive. Dorsey: „Die meisten Unternehmen werden innerhalb des nächsten Jahres zum selben Schluss kommen."</p>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-icon">🎬</div>
-      <div class="news-content">
-        <span class="news-tag tag-blue">Hollywood M&A</span>
-        <h3>Warner Bros. Discovery-Übernahme offiziell besiegelt: Paramount &amp; Ellison übernehmen – CNN unter Trump-nahem Dach</h3>
-        <p>Am Montag, 2. März, unterzeichneten Warner Bros. Discovery und Paramount Skydance die Übernahmevereinbarung – der Deal ist damit offiziell. Paramount, geführt von David Ellison (Sohn von Larry Ellison), bietet rund 111 Mrd. USD für den gesamten Konzern inkl. HBO, DC-Universum (Batman, Superman), Harry Potter und CNN. Netflix war zuvor aus dem Bieterstreit ausgestiegen und zahlt als Vertragsstrafe 2,8 Mrd. USD an Warner – diese Strafe übernimmt Paramount. Larry Ellison (Vermögen ~$200 Mrd.) garantiert persönlich große Teile des Kaufpreises. Politisch brisant: CNN wechselt damit unter das Dach der Trump-nahen Ellison-Familie. Kritiker befürchten den Verlust redaktioneller Unabhängigkeit. Der Deal steht noch unter Vorbehalt der Wettbewerbsprüfung durch Generalstaatsanwalt Rob Bonta (Kalifornien) und US-Wettbewerbshüter in Washington. Paramount ist bereit, im Fall des Scheiterns 7 Mrd. USD Strafe zu zahlen. Netflix-Aktie stieg am Freitag um +13,77 % auf 96,24 USD.</p>
-      </div>
-    </div>
-
-    <div class="news-item">
-      <div class="news-icon">🏦</div>
-      <div class="news-content">
-        <span class="news-tag tag-yellow">US-Aktie</span>
-        <h3>Berkshire Hathaway: Buffetts letzte Bilanz – Umsatz verfehlt Erwartungen, erster Aktionärsbrief von Greg Abel</h3>
-        <p>Warren Buffetts letzter Annual Report als CEO liegt vor – und er enttäuscht. Berkshire Hathaway erzielte 2025 einen Umsatz von 371,44 Mrd. USD (Vorjahr: 371,43 Mrd.) – Analysten hatten 385 Mrd. USD erwartet. Der Nettogewinn sank von 89,56 Mrd. auf 67,27 Mrd. USD. EPS (A-Aktie): 46,56 USD vs. 61,90 USD im Vorjahr. Zum Jahreswechsel 2025/26 übergab Buffett das Steuer an seinen langjährigen Stellvertreter Greg Abel. Der diesjährige Aktionärsbrief stammt erstmals von Abel – nicht von Buffett. Die Berkshire-Hauptversammlung findet am 2. Mai 2026 statt. Die Aktie verliert im vorbörslichen Handel. UBS hält „Buy" auf den Titel.</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- INSIDER-TRADE -->
-  <div class="section-label">🕵️ Insider-Trade der Woche</div>
-  <div class="insider-box">
-    <div class="ib-label">📊 Auffälliger Kauf – KKR &amp; Co.</div>
-    <h2>KKR-Insider kauft für $25,6 Mio. – das stärkste Insider-Signal der Woche</h2>
-    <div class="insider-grid">
-      <div class="ig-stat">
-        <div class="ig-label">Kaufvolumen</div>
-        <div class="ig-value">$25,6 Mio.</div>
-      </div>
-      <div class="ig-stat">
-        <div class="ig-label">Transaktionen</div>
-        <div class="ig-value">2 Trades</div>
-      </div>
-      <div class="ig-stat">
-        <div class="ig-label">Kategorie</div>
-        <div class="ig-value">Vorstandskauf</div>
-      </div>
-    </div>
-    <p style="font-size:13px; color:#c9d1d9; line-height:1.7; margin-top:10px;">
-      Der auffälligste Insider-Trade der vergangenen Woche kam von KKR &amp; Co., dem US-amerikanischen Investmentgiganten: Insider kauften Anteile im Wert von rund 25,6 Mio. USD – in zwei Transaktionen. Wenn Vorstände eines Private-Equity-Unternehmens in dieser Größenordnung in das eigene Papier investieren, ist das ein starkes Signal. KKR hat zuletzt stark von steigenden Zinsen profitiert, da Credit-Produkte im Portfolio wachsen. Weitere nennenswerte Insider-Käufe in Deutschland: Commerzbank (1,13 Mio. EUR), freenet (498 TEUR), thyssenkrupp (488 TEUR). Verkaufsseitig fallen in den USA Palantir (-137 Mio. USD) und Vertex Pharmaceuticals (-32 Mio. USD) auf – klassische Gewinnmitnahmen nach starker Performance.
-    </p>
-    <p style="font-size:12px; color:#8b949e; margin-top:8px;">
-      Quelle: <a href="https://www.insiderkauf.de" style="color:#3fb950; text-decoration:none;">insiderkauf.de</a> · Alle Angaben ohne Gewähr · Kein Anlagehinweis
-    </p>
-  </div>
-
-  <!-- AKTIE IM FOKUS -->
-  <div class="section-label">⭐ Aktie im Fokus</div>
-  <div class="stock-box">
-    <div class="sb-label">🤖 KI-Disruption in Echtzeit</div>
-    <h2>Block Inc. – Wenn KI 4.000 Jobs streicht und die Börse applaudiert</h2>
-    <div class="stock-meta">
-      <div class="sm-item">
-        <div class="sm-label">Kurs nachbörslich</div>
-        <div class="sm-val up">63,52 USD</div>
-      </div>
-      <div class="sm-item">
-        <div class="sm-label">Nachbörslich</div>
-        <div class="sm-val up">+16–24 %</div>
-      </div>
-      <div class="sm-item">
-        <div class="sm-label">Bruttogewinn Q4</div>
-        <div class="sm-val">2,87 Mrd. USD</div>
-      </div>
-      <div class="sm-item">
-        <div class="sm-label">Wachstum Q4</div>
-        <div class="sm-val up">+24 % YoY</div>
-      </div>
-    </div>
-    <p style="font-size:13px; color:#c9d1d9; line-height:1.7;">
-      Block ist der Vorbote einer Entwicklung, die viele Unternehmen in den nächsten 12–24 Monaten durchlaufen werden: profitable Geschäfte, aber drastischer Personalabbau auf Kosten von KI-Tools. Dorsey macht nicht aus der Not heraus Entlassungen – Block wächst profitabel. Er handelt proaktiv, weil die eigenen KI-Tools bereits so leistungsfähig sind, dass 40 % weniger Personal die gleiche Arbeit schafft. Die Börse honoriert genau das. Für Investoren stellt sich die entscheidende Frage: Welche Unternehmen folgen als nächste? Block könnte der Katalysator für eine breite Diskussion über die wirtschaftlichen Folgen von KI werden.
-    </p>
-  </div>
-
-  <!-- PODCAST PROMO -->
-  <div class="section-label">🎙️ Unser Podcast</div>
-  <div class="podcast-box">
-    <div class="podcast-icon">🎧</div>
-    <div class="podcast-content">
-      <div class="pc-label">Neue Folge – jetzt reinhören</div>
-      <h3>„Bitcoin steigt für immer" – Zu Gast: Roman Reher alias Blocktrainer</h3>
-      <p>
-        In der neuesten Folge des aktien.kauf Podcasts war Roman Reher – bekannt als „Blocktrainer" und der bekannteste Bitcoin-Experte im deutschsprachigen Raum – zu Gast. Warum könnte Bitcoin in 20 Jahren zwischen 1 und 10 Mio. EUR wert sein? Was passiert, wenn Staaten Bitcoin als Reserve halten müssen? Und wie verhält sich Bitcoin in Kriegszeiten wie diesen – als Safe-Haven-Asset oder als spekulativer Token? Passt perfekt zur aktuellen Nachrichtenlage: Gold steigt, Bitcoin steigt – digitales Gold in Krisenzeiten?
-      </p>
-      <a href="https://linktr.ee/aktien.kauf" class="podcast-cta">▶ Jetzt hören – Spotify &amp; Apple Podcasts</a>
+  <div class="news-card">
+    <div class="news-tag" style="color:#f0b429;">Strategischer Blick</div>
+    <div class="news-title">DAX unter 25.000 – Favoritenwechsel in vollem Gang</div>
+    <p>An den Märkten vollzieht sich ein lautloser Paradigmenwechsel: KI-Werte wie SAP straucheln, Value-Titel aus Energie, Telekom und Pharma machen das Rennen. Die Deutsche Börse AG sieht DAX-KGVs rund 14 % über dem historischen Median seit 1988 – weiteres Upside ist begrenzt.</p>
+    <p style="margin-top:8px;">Der DAX schloss zuletzt mit dem höchsten Monatsschlusskurs der Geschichte – trotzdem: Nahost-Eskalation + Zollchaos drücken aktuell auf unter 25.000.</p>
+    <div class="news-meta">
+      <span class="meta-chip chip-red">DAX: unter 25.000</span>
+      <span class="meta-chip chip-gold">Value > Growth</span>
+      <span class="meta-chip chip-gray">Rüstung als Ausnahme</span>
     </div>
   </div>
 
-  <!-- AUSBLICK -->
-  <div class="section-label">🎯 Was diese Woche wichtig wird</div>
-  <div class="outlook-box">
-    <h3>Die wichtigsten Beobachtungspunkte</h3>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>Nahost-Eskalation – Ölpreis &amp; Straße von Hormuz:</strong> Der Iran hat den Schiffsverkehr durch die Straße von Hormuz eingeschränkt – täglich werden dort rund 20 % des globalen Öls transportiert. Bleibt die Meerenge blockiert, drohen Ölpreise über 90 USD. Energieaktien (Shell, BP, TotalEnergies) dürften profitieren, Fluggesellschaften geraten massiv unter Druck.</div>
-    </div>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>DAX – Krisenmodus:</strong> Der DAX dürfte heute deutlich unter 25.000 Punkte eröffnen. Rüstungswerte (Rheinmetall, HENSOLDT) könnten profitieren, Reisewerte und Airlines verlieren. Lufthansa hat alle Nahost-Flüge bis 8. März gestrichen.</div>
-    </div>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>OpenAI &amp; AWS-Partnerschaft – Auswirkungen auf den Cloud-Markt:</strong> Analysten erwarten, dass der $100-Mrd.-Deal OpenAIs AWS-Nutzung drastisch skaliert. Das gibt AWS-Aktien (Amazon) Rückenwind, belastet aber Konkurrenten wie Microsoft Azure und Google Cloud. Microsoft betont: Die eigene OpenAI-Partnerschaft bleibt unverändert.</div>
-    </div>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>Block-Effekt: Welches Unternehmen macht als nächstes KI-Stellenabbau?</strong> Dorsey sagte explizit: „Die meisten Unternehmen werden innerhalb des nächsten Jahres zum selben Schluss kommen." Tech-, Fintech- und Medienunternehmen mit hohem Personalanteil bei repetitiven Aufgaben stehen im Fokus.</div>
-    </div>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>Warner/Paramount-Deal – Wettbewerbsprüfung läuft:</strong> Generalstaatsanwalt Bonta und Washingtoner Wettbewerbshüter werden den $111-Mrd.-Deal unter die Lupe nehmen. Die politische Nähe der Ellisons zu Trump könnte den Prozess beschleunigen – oder neue Kontroversen entfachen.</div>
-    </div>
-    <div class="outlook-item">
-      <div class="oi-dot"></div>
-      <div><strong>KKR &amp; der Insider-Trade:</strong> Nach dem Vorstandskauf von $25,6 Mio. wird der Markt in dieser Woche beobachten, wie KKR mit dem Geopolitikschock umgeht. Private-Equity ist oft anfälliger für Krisenstimmung – aber auch schneller in der Lage, günstige Assets aufzukaufen.</div>
-    </div>
+  <div class="divider"></div>
+
+  <!-- 6. KURZ & KNAPP -->
+  <div class="section-label">⚡ Kurz & Knapp</div>
+
+  <div class="news-card" style="padding: 14px 20px;">
+    <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #c9d1d9;">
+      <li>🇩🇪 <strong>Deutsche Bahn</strong> braucht 10 Jahre für Netzreform – erste Verbesserungen für Fahrgäste sollen aber früher kommen</li>
+      <li>🏦 <strong>UBS</strong> – Konzerngewinn 2025: +50 % auf 7,8 Mrd. $ – CEO Ermotti soll offenbar über 2027 hinaus bleiben</li>
+      <li>🚗 <strong>Tesla Grünheide</strong> – Betriebsratswahl mit 550 Kandidaten auf 11 Listen – Musk schaltete sich mit Warnungen ein</li>
+      <li>💊 <strong>Roche</strong> – klinischer Erfolg mit neuem Multiple-Sklerose-Medikament, Aktie im Plus</li>
+      <li>📱 <strong>Telekom</strong> – bringt KI-Assistenten direkt ins Handynetz – nächste Stufe des Telco-KI-Race</li>
+      <li>📉 <strong>Inflation DE</strong> – fällt nach HVPI-Methode überraschend auf 2,0 % – Euro-Inflation dürfte dennoch steigen (Eurostat-Daten heute)</li>
+      <li>⚙️ <strong>Schaeffler</strong> – Jahresergebnis 2025: Umsatz –3,4% auf 23,5 Mrd. €, bereinigtes EBIT +11% auf 936 Mio. €. Ausblick 2026 konservativ – EBIT-Marge 3,5–5,5 %. Aktie vorbörslich unter Druck. Neue Wachstumsfelder: Robotik & Verteidigung</li>
+      <li>🛢 <strong>Ölwerte</strong> – Analysten stufen Eni und TotalEnergies auf "Overweight" hoch – Nahost-Prämie eingepreist</li>
+    </ul>
   </div>
 
-  <!-- ZITAT -->
-  <div class="section-label">💬 Zitat des Wochenendes</div>
-  <div class="quote-box">
-    <blockquote>„Ein deutlich kleineres Team kann mit den Instrumenten, die wir entwickeln, mehr leisten – und es besser machen. Innerhalb des nächsten Jahres werden die meisten Unternehmen zum selben Schluss kommen."</blockquote>
-    <div class="attribution">— Jack Dorsey, CEO Block Inc., Aktionärsbrief Q4 2025, 27. Februar 2026</div>
+  <div class="divider"></div>
+
+  <!-- FOOTER CTA -->
+  <div style="text-align:center; padding: 8px 0 20px;">
+    <p style="font-size:13px; color:#8b949e; margin-bottom: 8px;">Alle Links, Charts & Quellen:</p>
+    <a href="https://linktr.ee/aktien.kauf" style="display:inline-block; background: #f0b429; color: #0d1117; font-weight:800; font-size:13px; padding: 10px 28px; border-radius: 24px; text-decoration: none; letter-spacing: 0.5px;">🔗 linktr.ee/aktien.kauf</a>
+    <p style="font-size: 11px; color: #8b949e; margin-top: 12px;">Kein Anlageberatung. Nur zur Information.</p>
   </div>
 
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <strong>aktien.kauf</strong> · Podcast · Morning Briefing<br>
-  <a href="https://linktr.ee/aktien.kauf">linktr.ee/aktien.kauf</a> · Spotify &amp; Apple Podcasts
-  <div class="disclaimer">
-    Dieses Briefing dient ausschließlich zur Information und stellt keine Anlageberatung dar. Alle Kursangaben sind indikativ und können abweichen. Investieren birgt Risiken. Bitte triff eigene Entscheidungen auf Basis eigener Recherche.
-  </div>
+  <p>Morning Briefing von <a href="https://linktr.ee/aktien.kauf">aktien.kauf</a> · Dienstag, 3. März 2026</p>
+  <p style="margin-top: 4px; font-size: 11px;">Für Feedback & Themenvorschläge: linktr.ee/aktien.kauf</p>
 </div>
 
 </body>
